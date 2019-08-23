@@ -35,3 +35,7 @@ body{
 .container-fluid{
    overflow: hidden;
 }
+
+html, body {
+   overflow: auto;
+}
