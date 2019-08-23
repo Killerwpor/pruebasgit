@@ -1,0 +1,47 @@
+#alertModal{
+    padding: none;
+}
+
+#alertModal .alert_modal_icon{
+    height: 6.5em;
+    margin-bottom: 1.5em;
+}
+
+#alertModal .close{
+    color: white;
+}
+
+#alertModal .alert_modal_headline{
+    color: white;
+    font-family: 'tex';
+}
+
+#alertModal .modal-dialog{
+    max-width: none;
+}
+
+#alertModal .modal-header{
+    border: none;
+}
+
+#alertModal .modal-content{
+    background-color: #3B4554;
+    height: 28.5em;
+    text-align: center;
+}
+
+#alertModal .row{
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+#alertModal .modal-content .form-control{
+    background-color: #232832;
+    border: 3px solid;
+    border-color: #34dd94;
+}
+
+#alertModal .submit-btn{
+    display: block;
+}
+

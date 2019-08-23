@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face{
+   font-family: tex;
+   src: url(assets/fonts/texgyreadventor-regular.otf);
+}
+
+@font-face{
+   font-family: tex-bold;
+   src: url(assets/fonts/texgyreadventor-bold.otf);
+}
+
+@font-face{
+   font-family: tex-italic;
+   src: url(assets/fonts/texgyreadventor-italic.otf);
+}
+
+@font-face{
+   font-family: tex-bolditalic;
+   src: url(assets/fonts/texgyreadventor-bolditalic.otf);
+}
+
+body{
+   background-color: #29303e;
+}
+
+.row_logo{
+   margin-top: 3em;
+   margin-bottom: 3em;
+}
+
+.logo_img{
+   width: 60%;
+}
+
+.container-fluid{
+   overflow: hidden;
+}
