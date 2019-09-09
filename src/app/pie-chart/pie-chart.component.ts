@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PieChartComponent implements OnInit {
 
+  public pieChartData = [120,150,77,46];
+  public pieChartLabels = ['Data 1','Data 2','Data 3','Data 4'];
+  public pieChartType = "pie";
+
   constructor() { }
 
   ngOnInit() {

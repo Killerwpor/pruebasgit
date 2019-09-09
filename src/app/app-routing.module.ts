@@ -12,25 +12,19 @@ const routes: Routes = [
   {
     path: "dash",
     component: DashboardComponent,
-    children:[
+    children: [
       {
         path: "chart-panel",
         component: ChartPanelComponent,
         children: [
           { path: "bar-chart", component: BarChartComponent },
-          { path: "doughnut-chart", component: DoughnutChartComponent }
+          { path: "doughnut-chart", component: DoughnutChartComponent },
+          { path: "radar-chart", component: RadarChartComponent },
+          { path: "pie-chart", component: PieChartComponent }
         ]
       }
     ]
-  },
-  
-
-  /*
-  {path: 'bar-chart', component: BarChartComponent},
-  {path: 'doughnut-chart', component: DoughnutChartComponent},
-  {path: 'radar-chart', component: RadarChartComponent},
-  {path: 'pie-chart', component: PieChartComponent}
-  */
+  }
 ];
 
 @NgModule({
