@@ -1,16 +1,18 @@
-<ul class="nav nav-tabs">
-  <li class="nav-item">
-    <a class="nav-link" routerLink="./bar-chart">Bar Chart</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" routerLink="./doughnut-chart">Dougnut Chart</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" routerLink="./radar-chart">Radar Chart</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" routerLink="./pie-chart">Pie Chart</a>
-  </li>
-</ul>
+<div class="col text-center">
+  <div ngbDropdown class="d-inline-block">
+    <button
+      class="btn btn-outline-primary"
+      id="dropdownBasic1"
+      ngbDropdownToggle
+    >
+      Charts
+    </button>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+      <button ngbDropdownItem routerLink="./bar-chart">Bar</button>
+      <button ngbDropdownItem routerLink="./doughnut-chart">Doughnut</button>
+      <button ngbDropdownItem routerLink="./radar-chart">Radar</button>
+      <button ngbDropdownItem routerLink="./pie-chart">Pie</button>
+    </div>
+  </div>
+</div>
 <router-outlet></router-outlet>
-

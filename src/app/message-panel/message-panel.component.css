@@ -1,0 +1,13 @@
+textarea{
+    resize: none;
+    border: none;
+    border-radius: 0.5em;
+}
+
+.form-group{
+    padding-top: 1.5em;
+}
+
+.form-control:disabled{
+    background-color: var(--spectra-dark-grey);
+}
