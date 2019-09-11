@@ -1,4 +1,3 @@
-import { mdbootstrap } from 'mdbootstrap';
 import { RadarChartComponent } from './radar-chart/radar-chart.component';
 import { DoughnutChartComponent } from './doughnut-chart/doughnut-chart.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
@@ -16,6 +15,7 @@ import { ChartPanelComponent } from './chart-panel/chart-panel.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContactPanelComponent } from './contact-panel/contact-panel.component';
 import { MessagePanelComponent } from './message-panel/message-panel.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
@@ -28,14 +28,15 @@ import { MessagePanelComponent } from './message-panel/message-panel.component';
     ChartPanelComponent,
     DashboardComponent,
     ContactPanelComponent,
-    MessagePanelComponent
+    MessagePanelComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ChartsModule,
     NgbModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
