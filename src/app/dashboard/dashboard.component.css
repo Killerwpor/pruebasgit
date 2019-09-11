@@ -1,1 +1,8 @@
+.col-lg-2{
+  padding: 0;
+}
 
+.col_contact_info {
+  border-right: 2px solid;
+  border-color: var(--spectra-green);
+}

@@ -4,8 +4,10 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-lg-2"></div>
-    <div style="border-right: 2px solid; border-color: var(--spectra-green);" class="col-lg-5">
+    <div class="col-lg-2 col-simulators">
+      <app-list-simulators></app-list-simulators>
+    </div>
+    <div class="col-lg-5 col_contact_info">
       <app-contact-panel></app-contact-panel>
     </div>
     <div class="col-lg-5 my-auto">
@@ -13,7 +15,9 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-lg-2"></div>
+    <div class="col-lg-2">
+      <app-list-simulators></app-list-simulators>
+    </div>
     <div class="col-lg-6 my-auto">
       <app-message-panel></app-message-panel>
     </div>

@@ -16,6 +16,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContactPanelComponent } from './contact-panel/contact-panel.component';
 import { MessagePanelComponent } from './message-panel/message-panel.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ListSimulatorsComponent } from './list-simulators/list-simulators.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     DashboardComponent,
     ContactPanelComponent,
     MessagePanelComponent,
-    NavbarComponent
+    NavbarComponent,
+    ListSimulatorsComponent
   ],
   imports: [
     BrowserModule,

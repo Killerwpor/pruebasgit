@@ -1,0 +1,24 @@
+.container-flex {
+  background-color: var(--spectra-light-grey);
+  height: 100%;
+}
+
+.row-simulator .container-button {
+  display: flex;
+  align-items: center;
+  padding: 1em;
+}
+
+.image--cover {
+  position: absolute;
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center right;
+  object-position: center right;
+  border: 2px solid;
+  border-color: white;
+  z-index: 1;
+}
