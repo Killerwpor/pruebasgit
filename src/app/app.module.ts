@@ -1,3 +1,4 @@
+import { mdbootstrap } from 'mdbootstrap';
 import { RadarChartComponent } from './radar-chart/radar-chart.component';
 import { DoughnutChartComponent } from './doughnut-chart/doughnut-chart.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';

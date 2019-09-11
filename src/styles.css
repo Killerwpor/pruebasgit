@@ -1,13 +1,36 @@
 /*Imports */
-@import '~bootstrap/dist/css/bootstrap.css';
-@import '~font-awesome/css/font-awesome.css';
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
 
+@font-face{
+  font-family: tex;
+  src: url(assets/fonts/texgyreadventor-regular.otf);
+}
+
+@font-face{
+  font-family: tex-bold;
+  src: url(assets/fonts/texgyreadventor-bold.otf);
+}
+
+@font-face{
+  font-family: tex-italic;
+  src: url(assets/fonts/texgyreadventor-italic.otf);
+}
+
+@font-face{
+  font-family: tex-bolditalic;
+  src: url(assets/fonts/texgyreadventor-bolditalic.otf);
+}
 
 :root {
-  --spectra-light-grey: #3B4554;
-  --spectra-grey: #2D3646;
-  --spectra-dark-grey: #1A2538;
+  --spectra-light-grey: #3b4554;
+  --spectra-grey: #2d3646;
+  --spectra-dark-grey: #1a2538;
   --spectra-green: #40b987;
+}
+
+body {
+  background-color: var(--spectra-grey);
 }
 
 html,
@@ -19,7 +42,6 @@ body,
 
 #fullheight {
   width: 100%;
-  background-color: var(--spectra-grey);
 }
 
 .chart {
@@ -29,4 +51,27 @@ body,
 canvas {
   width: 75% !important;
   height: 75% !important;
+  padding: 0;
+  margin: auto;
+  display: block;
+}
+
+.tex{
+  font-family: 'tex';
+  color: white;
+}
+
+.tex-bold{
+  font-family: 'tex-bold';
+  color: white;
+}
+
+.tex-italic{
+  font-family: 'tex-italic';
+  color: white;
+}
+
+.tex-bold-italic{
+  font-family: 'tex-bolditalic';
+  color: white;
 }
