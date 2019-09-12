@@ -1,3 +1,23 @@
+.row-all {
+  margin: 0;
+}
+
+.row-all .col-lg-2 .col-simulators,
+.row-all .col-lg-2 .col-contacts{
+  padding: 0;
+}
+
+
+.row-all .col-lg-2 .row-simulators{
+  height: 40%;
+  overflow-y: auto;
+}
+
+.row-all .col-lg-2 .row-contacts{
+  height: 60%;
+  overflow-y: auto;
+}
+
 .col-lg-2{
   padding: 0;
 }

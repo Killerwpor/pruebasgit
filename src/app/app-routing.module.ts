@@ -1,3 +1,4 @@
+import { LineChartComponent } from './line-chart/line-chart.component';
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { ChartPanelComponent } from "./chart-panel/chart-panel.component";
 import { RadarChartComponent } from "./radar-chart/radar-chart.component";
@@ -20,7 +21,8 @@ const routes: Routes = [
           { path: "bar-chart", component: BarChartComponent },
           { path: "doughnut-chart", component: DoughnutChartComponent },
           { path: "radar-chart", component: RadarChartComponent },
-          { path: "pie-chart", component: PieChartComponent }
+          { path: "pie-chart", component: PieChartComponent },
+          { path: "line-chart", component: LineChartComponent}
         ]
       }
     ]

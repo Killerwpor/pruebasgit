@@ -75,3 +75,18 @@ canvas {
   font-family: 'tex-bolditalic';
   color: white;
 }
+
+.scroll {
+  border: 1px solid grey;
+  overflow: scroll;
+  display: inline-block;
+}
+.scroll-width-auto {
+  scrollbar-width: auto;
+}
+.scroll-width-thin {
+  scrollbar-width: thin;
+}
+.scroll-width-none {
+  scrollbar-width: none;
+}

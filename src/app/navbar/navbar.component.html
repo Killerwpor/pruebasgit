@@ -1,75 +1,99 @@
 <nav class="navbar navbar-expand-lg">
-  <div class="row row-all">
-    <div class="col-lg-6 col-logo">
-      <div class="row mx-auto my-auto">
-        <div class="col text-center my-auto">
-          <h5 class="tex">Simuladores | Clientes</h5>
-        </div>
-        <div class="col text-center">
-          <a class="navbar-brand" href="#">
-            <img
-              src="assets/img/UI_spectraAPP_LOGO_SPECTRA.png"
-              width="130"
-              height="30"
-              alt=""
-            />
-          </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="row row-all">
+      <div class="col-lg-6 col-logo">
+        <div class="row mx-auto my-auto">
+          <div class="col text-center my-auto">
+            <h5 class="tex">Simuladores | Clientes</h5>
+          </div>
+          <div class="col text-center">
+            <a class="navbar-brand" href="#">
+              <img
+                src="assets/img/UI_spectraAPP_LOGO_SPECTRA.png"
+                width="130"
+                height="30"
+                alt=""
+              />
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-lg-6 col-search">
-      <div class="row">
-        <div class="col-lg-8 text-center">
-          <form class="form-inline">
-            <div class="container">
-              <input
-                class="form-control mr-sm-2 spectra-searchbar"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-            </div>
-          </form>
-        </div>
-        <div class="col-lg-4">
-          <div ngbDropdown class="dropdown-nav d-inline-block">
-            <button
-              class="btn btn-outline-primary btn-dropdown"
-              id="dropdownBasic1"
-              ngbDropdownToggle
-            >
-              <p class="tex">Nombre</p>
-            </button>
-            <div
-              ngbDropdownMenu
-              class="dropdown-btns"
-              aria-labelledby="dropdownBasic1"
-            >
-              <button ngbDropdownItem routerLink="./bar-chart">
+      <div class="col-lg-6 col-search">
+        <div class="row row-search">
+          <div class="col-lg-8 my-auto text-center">
+            <form class="form-inline">
+              <div class="container">
+                <input
+                  class="form-control mr-sm-2 spectra-searchbar"
+                  type="search"
+                  placeholder="&#xF002; Search"
+                  aria-label="Search"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-4">
+            <div ngbDropdown class="dropdown-nav d-inline-block">
+              <button
+                class="btn btn-outline-primary btn-dropdown"
+                id="dropdownBasic1"
+                ngbDropdownToggle
+              >
                 <p class="text-center my-auto tex">
-                  <i class="fa fa-info-circle" aria-hidden="true"></i>
-                  Informacion
+                  Nombre
                 </p>
               </button>
-              <button ngbDropdownItem routerLink="./doughnut-chart">
-                <p class="text-center my-auto tex">
-                  <i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar
-                  Sesion
-                </p>
-              </button>
-              <button ngbDropdownItem routerLink="./radar-chart">
-                <p class="text-center my-auto tex">
-                  <i class="fa fa-user" aria-hidden="true"></i>
-                  Perfil
-                </p>
-              </button>
-              <button ngbDropdownItem routerLink="./pie-chart">
-                <p class="text-center my-auto tex">
-                  <i class="fa fa-cog" aria-hidden="true"></i>
-                  Configuracion
-                </p>
-              </button>
-              <div class="filler"></div>
+              <div
+                ngbDropdownMenu
+                class="dropdown-btns"
+                aria-labelledby="dropdownBasic1"
+              >
+                <button ngbDropdownItem routerLink="./bar-chart">
+                  <div class="padding">
+                    <p class="text-center my-auto tex">
+                      <i class="fa fa-info-circle" aria-hidden="true"></i>
+                      Informacion
+                    </p>
+                  </div>
+                </button>
+                <button ngbDropdownItem routerLink="./doughnut-chart">
+                  <div class="padding">
+                    <p class="text-center my-auto tex">
+                      <i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar
+                      Sesion
+                    </p>
+                  </div>
+                </button>
+                <button ngbDropdownItem routerLink="./radar-chart">
+                  <div class="padding">
+                    <p class="text-center my-auto tex">
+                      <i class="fa fa-user" aria-hidden="true"></i>
+                      Perfil
+                    </p>
+                  </div>
+                </button>
+                <button ngbDropdownItem routerLink="./pie-chart">
+                  <div class="padding">
+                    <p class="text-center my-auto tex">
+                      <i class="fa fa-cog" aria-hidden="true"></i>
+                      Configuracion
+                    </p>
+                  </div>
+                </button>
+                <div class="filler"></div>
+              </div>
             </div>
           </div>
         </div>

@@ -40,7 +40,7 @@ export class DoughnutChartComponent implements OnInit {
     [90,10]
   ];
 
-  public doughnutChartLabels = ["Programacion", ""];
+  public doughnutChartLabels = ["hola", ""];
   public doughnutChartType = "doughnut";
 
   constructor() { }
