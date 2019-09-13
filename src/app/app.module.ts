@@ -20,6 +20,7 @@ import { MessagePanelComponent } from './message-panel/message-panel.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ListSimulatorsComponent } from './list-simulators/list-simulators.component';
 import { ListContactsComponent } from './list-contacts/list-contacts.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { ListContactsComponent } from './list-contacts/list-contacts.component';
     ChartsModule,
     NgbModule,
     AngularFontAwesomeModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

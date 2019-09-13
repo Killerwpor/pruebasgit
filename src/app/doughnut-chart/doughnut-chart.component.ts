@@ -1,3 +1,4 @@
+import { ChartDataSets } from 'chart.js';
 import { Component, OnInit, Input } from '@angular/core';
 import { MultiDataSet, Label } from 'ng2-charts';
 
@@ -36,8 +37,8 @@ export class DoughnutChartComponent implements OnInit {
 
   public progressChartData: MultiDataSet = [
     [50,50],
-    [10,30],
-    [90,10]
+    [80,20],
+    [30,70]
   ];
 
   public doughnutChartLabels = ["hola", ""];
