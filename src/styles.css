@@ -91,5 +91,21 @@ canvas {
   scrollbar-width: none;
 }
 
+.modal-dialog{
+  margin: 0;
+  max-width: 10.5em;
+}
+
+.modal-content{
+  height: 100vh;
+  background-color: var(--spectra-grey);
+}
+
+.modal-header{
+  border: 0;
+}
+
+
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
