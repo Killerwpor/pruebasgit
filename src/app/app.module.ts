@@ -20,6 +20,7 @@ import { MessagePanelComponent } from './message-panel/message-panel.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ListSimulatorsComponent } from './list-simulators/list-simulators.component';
 import { ListContactsComponent } from './list-contacts/list-contacts.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { ListContactsComponent } from './list-contacts/list-contacts.component';
     NavbarComponent,
     ListSimulatorsComponent,
     ListContactsComponent,
-    LineChartComponent
+    LineChartComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
