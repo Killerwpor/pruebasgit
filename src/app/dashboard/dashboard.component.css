@@ -13,8 +13,16 @@
   overflow-y: auto;
 }
 
+.row-all .col-lg-2 .row-search{
+  height: 5%;
+}
+
+.row-all .col-lg-2 .row-search .col-search{
+  padding: 0;
+}
+
 .row-all .col-lg-2 .row-contacts{
-  height: 60%;
+  height: 55%;
   overflow-y: auto;
 }
 
@@ -26,3 +34,4 @@
   border-right: 2px solid;
   border-color: var(--spectra-green);
 }
+
