@@ -92,28 +92,6 @@ canvas {
   scrollbar-width: none;
 }
 
-.modal-dialog{
-  margin: 0;
-  max-width: 10.5em;
-  animation-name: example;
-  animation-duration: 0.5s;
-}
-
-@keyframes example{
-  0% {transform: translateX(-10.5em)}
-  100% {transform: translateX(0em)}
-}
-
-.modal-content{
-  height: 100vh;
-  background-color: var(--spectra-grey);
-}
-
-.modal-header{
-  border: 0;
-}
-
-
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

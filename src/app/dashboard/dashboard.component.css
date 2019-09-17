@@ -1,5 +1,6 @@
 .row-all {
   margin: 0;
+  background-color: var(--spectra-grey);
 }
 
 .row-all .col-lg-2 .col-simulators,
