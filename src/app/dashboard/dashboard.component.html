@@ -1,21 +1,17 @@
-<div class="container-flex">
+<div class="container-flex" style="height: 5vh;">
   <app-navbar></app-navbar>
 </div>
 
-<div class="row row-all">
-  <div class="col-lg-2" style="max-height: 95vh;">
-    <div class="row row-simulators" style="overflow-y: auto;">
-      <div class="col-lg-12 col-simulators">
+<div class="row row-all" style="height: 95vh;">
+  <div class="col-lg-2" style="max-height: 100%;">
+    <div class="d-flex flex-column h-100">
+      <div class="bd-highlight" style="height: 30%;">
         <app-list-simulators></app-list-simulators>
       </div>
-    </div>
-    <div class="row row-search">
-      <div class="col-lg-12 col-search">
+      <div class="bd-highlight" style="height: 10%">
         <app-contact-search></app-contact-search>
       </div>
-    </div>
-    <div class="row row-contacts" style="scrollbar-width: none;">
-      <div class="col-lg-12 col-contacts">
+      <div class="bd-highlight" style="height: 60%;">
         <app-list-contacts></app-list-contacts>
       </div>
     </div>
@@ -34,8 +30,29 @@
         <app-message-panel></app-message-panel>
       </div>
       <div class="col-lg-7 my-auto">
-          <app-doughnut-chart></app-doughnut-chart> 
+        <app-doughnut-chart></app-doughnut-chart>
       </div>
     </div>
   </div>
 </div>
+
+<!-- 
+  
+  <div class="row row-simulators" style="overflow-y: auto;">
+    <div class="col-lg-12 col-simulators">
+      <app-list-simulators></app-list-simulators>
+    </div>
+  </div>
+  <div class="row row-search">
+    <div class="col-lg-12 col-search">
+      <app-contact-search></app-contact-search>
+    </div>
+  </div>
+  <div class="row row-contacts" style="scrollbar-width: none;">
+    <div class="col-lg-12 col-contacts">
+      <app-list-contacts></app-list-contacts>
+    </div>
+  </div>
+  
+  
+-->

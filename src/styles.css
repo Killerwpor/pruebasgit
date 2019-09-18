@@ -50,8 +50,8 @@ body,
 }
 
 canvas {
-  width: 75% !important;
-  height: 75% !important;
+  width: 55% !important;
+  height: 55% !important;
   padding: 0;
   margin: auto;
   display: block;
