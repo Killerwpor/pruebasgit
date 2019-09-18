@@ -10,33 +10,33 @@
       />
     </div>
   </div>
-  <div class="col-lg-10 tex my-auto col-name-simulator">
+  <div class="col-lg-8 tex my-auto col-name-simulator">
     <h5>Nombre del simulador</h5>
+  </div>
+  <div class="col-lg-2 my-auto">
+    <div ngbDropdown class="d-inline-block">
+      <button
+        class="btn btn-outline-primary"
+        id="dropdownBasic1"
+        ngbDropdownToggle
+      >
+        Charts
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem routerLink="./bar-chart">Bar</button>
+        <button ngbDropdownItem routerLink="./doughnut-chart">
+          Doughnut
+        </button>
+        <button ngbDropdownItem routerLink="./radar-chart">Radar</button>
+        <button ngbDropdownItem routerLink="./pie-chart">Pie</button>
+        <button ngbDropdownItem routerLink="./line-chart">Line</button>
+      </div>
+    </div>
   </div>
 </div>
 
 <div class="row">
   <div class="col-lg-12">
-    <div class="col text-center">
-      <div ngbDropdown class="d-inline-block">
-        <button
-          class="btn btn-outline-primary"
-          id="dropdownBasic1"
-          ngbDropdownToggle
-        >
-          Charts
-        </button>
-        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <button ngbDropdownItem routerLink="./bar-chart">Bar</button>
-          <button ngbDropdownItem routerLink="./doughnut-chart">
-            Doughnut
-          </button>
-          <button ngbDropdownItem routerLink="./radar-chart">Radar</button>
-          <button ngbDropdownItem routerLink="./pie-chart">Pie</button>
-          <button ngbDropdownItem routerLink="./line-chart">Line</button>
-        </div>
-      </div>
-    </div>
     <router-outlet></router-outlet>
   </div>
 </div>

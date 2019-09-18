@@ -1,17 +1,17 @@
-<div class="container-flex" style="height: 5vh;">
+<div class="container-flex" style="height: 5%;">
   <app-navbar></app-navbar>
 </div>
 
-<div class="row row-all" style="height: 95vh;">
+<div class="row row-all">
   <div class="col-lg-2" style="max-height: 100%;">
     <div class="d-flex flex-column h-100">
-      <div class="bd-highlight" style="height: 30%;">
+      <div class="bd-highlight align-self-stretch h-25">
         <app-list-simulators></app-list-simulators>
       </div>
-      <div class="bd-highlight" style="height: 10%">
+      <div class="bd-highlight align-self-stretch h-25">
         <app-contact-search></app-contact-search>
       </div>
-      <div class="bd-highlight" style="height: 60%;">
+      <div class="bd-highlight align-self-stretch h-50">
         <app-list-contacts></app-list-contacts>
       </div>
     </div>
@@ -25,11 +25,12 @@
         <router-outlet></router-outlet>
       </div>
     </div>
+    <div class="filler" style="margin: 1.45em;"></div>
     <div class="row">
-      <div class="col-lg-5 my-auto">
+      <div class="col-lg-7 my-auto">
         <app-message-panel></app-message-panel>
       </div>
-      <div class="col-lg-7 my-auto">
+      <div class="col-lg-5 my-auto">
         <app-doughnut-chart></app-doughnut-chart>
       </div>
     </div>

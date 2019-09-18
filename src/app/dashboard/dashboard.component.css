@@ -10,12 +10,10 @@
 
 
 .row-all .col-lg-2 .row-simulators{
-  height: 40%;
   overflow-y: auto;
 }
 
 .row-all .col-lg-2 .row-search{
-  height: 5%;
 }
 
 .row-all .col-lg-2 .row-search .col-search{
@@ -23,7 +21,6 @@
 }
 
 .row-all .col-lg-2 .row-contacts{
-  height: 55%;
   overflow-y: auto;
 }
 
