@@ -19,12 +19,7 @@
 
           
         -->
-        <button
-          class="btn btn-lg btn-controls btn-outline-success"
-          (click)="open(content)"
-        >
-          <i class="fa fa-play-circle-o" aria-hidden="true"></i>
-        </button>
+        <button (click)="_toggleSidebar()">Toggle sidebar</button>
       </div>
       <div class="col-lg-5 col-logo">
         <div class="row mx-auto my-auto">
@@ -46,35 +41,20 @@
       <div class="col-lg-6 col-search">
         <div class="row row-search">
           <div class="col-lg-8 my-auto text-center">
-            <!-- 
-
-              <form class="form-inline">
-                <div class="container">
-                  <input
-                    class="form-control mr-sm-2 spectra-searchbar"
-                    type="search"
-                    placeholder="&#xF002; Search"
-                    aria-label="Search"
-                  />
-                </div>
-              </form>
-
-            -->
-
             <div class="input-group mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Username"
-                  aria-label="Username"
-                  aria-describedby="basic-addon1"
-                />
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon1">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                  </span>
-                </div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Username"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </span>
               </div>
+            </div>
           </div>
           <div class="col-lg-4">
             <div ngbDropdown class="dropdown-nav d-inline-block">
@@ -134,10 +114,10 @@
   </div>
 </nav>
 
-<ng-template #content let-modal>
-  <app-sidebar></app-sidebar>
-</ng-template>
-<!-- 
-
-
--->
+<!-- Container for sidebar(s) + page content -->
+<ng-sidebar-container style="height: 100vh;">
+  <!-- A sidebar -->
+  <ng-sidebar [(opened)]="_opened" style="z-index: 4;">
+    <app-sidebar></app-sidebar>
+  </ng-sidebar>
+</ng-sidebar-container>

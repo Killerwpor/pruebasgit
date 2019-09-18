@@ -30,6 +30,12 @@ export class NavbarComponent implements OnInit {
     }
   }
 
+  private _opened: boolean = false;
+
+  private _toggleSidebar() {
+    this._opened = !this._opened;
+  }
+
   closeResult: string;
 
   ngOnInit() {

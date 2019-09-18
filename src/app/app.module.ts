@@ -7,6 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { SidebarModule } from 'ng-sidebar';
 
 
 import { ChartsModule } from 'ng2-charts';
@@ -49,6 +50,7 @@ import { ContactSearchComponent } from './contact-search/contact-search.componen
     ChartsModule,
     NgbModule,
     AngularFontAwesomeModule,
+    SidebarModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
