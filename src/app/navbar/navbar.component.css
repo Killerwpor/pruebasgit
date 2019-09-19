@@ -85,8 +85,8 @@
 }
 
 input {
-  border-top-left-radius: 3em;
-  border-bottom-left-radius: 3em;
+  border-top-right-radius: 3em;
+  border-bottom-right-radius: 3em;
   color: var(--spectra-green);
   background-color: var(--spectra-dark-grey);
   border: 3px solid;
@@ -94,8 +94,8 @@ input {
 }
 
 .input-group-prepend span {
-  border-top-right-radius: 3em;
-  border-bottom-right-radius: 3em;
+  border-top-left-radius: 3em;
+  border-bottom-left-radius: 3em;
   color: var(--spectra-green);
   background-color: var(--spectra-dark-grey);
   border: 3px solid;
