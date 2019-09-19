@@ -2,22 +2,22 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~font-awesome/css/font-awesome.css";
 
-@font-face{
+@font-face {
   font-family: tex;
   src: url(assets/fonts/texgyreadventor-regular.otf);
 }
 
-@font-face{
+@font-face {
   font-family: tex-bold;
   src: url(assets/fonts/texgyreadventor-bold.otf);
 }
 
-@font-face{
+@font-face {
   font-family: tex-italic;
   src: url(assets/fonts/texgyreadventor-italic.otf);
 }
 
-@font-face{
+@font-face {
   font-family: tex-bolditalic;
   src: url(assets/fonts/texgyreadventor-bolditalic.otf);
 }
@@ -29,6 +29,30 @@
   --spectra-green: #40b987;
 }
 
+.test-purple {
+  border: 2px solid;
+  border-color: purple;
+}
+
+.test-green {
+  border: 2px solid;
+  border-color: green;
+}
+
+.test-blue {
+  border: 2px solid;
+  border-color: blue;
+}
+
+.test-red {
+  border: 2px solid;
+  border-color: red;
+}
+
+.test-crimson {
+  border: 2px solid;
+  border-color: crimson;
+}
 
 body {
   background-color: var(--spectra-grey);
@@ -50,30 +74,30 @@ body,
 }
 
 canvas {
-  width: 55% !important;
-  height: 55% !important;
+  width: 80% !important;
+  height: 80% !important;
   padding: 0;
   margin: auto;
   display: block;
 }
 
-.tex{
-  font-family: 'tex';
+.tex {
+  font-family: "tex";
   color: white;
 }
 
-.tex-bold{
-  font-family: 'tex-bold';
+.tex-bold {
+  font-family: "tex-bold";
   color: white;
 }
 
-.tex-italic{
-  font-family: 'tex-italic';
+.tex-italic {
+  font-family: "tex-italic";
   color: white;
 }
 
-.tex-bold-italic{
-  font-family: 'tex-bolditalic';
+.tex-bold-italic {
+  font-family: "tex-bolditalic";
   color: white;
 }
 
@@ -92,6 +116,11 @@ canvas {
   scrollbar-width: none;
 }
 
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

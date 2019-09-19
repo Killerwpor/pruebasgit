@@ -1,35 +1,26 @@
-.row-all {
-  margin: 0;
+.container-all{
   background-color: var(--spectra-grey);
 }
 
-.row-all .col-lg-2 .col-simulators,
-.row-all .col-lg-2 .col-contacts{
-  padding: 0;
+.row-nav{
+  height: 6%;
 }
 
-
-.row-all .col-lg-2 .row-simulators{
-  overflow-y: auto;
+.row-dash{
+  height: 94%;
+  background-color: var(--spectra-grey);
 }
 
-.row-all .col-lg-2 .row-search{
+.row-dash-upper{
+  height: 65%;
 }
 
-.row-all .col-lg-2 .row-search .col-search{
-  padding: 0;
-}
-
-.row-all .col-lg-2 .row-contacts{
-  overflow-y: auto;
-}
-
-.col-lg-2{
-  padding: 0;
-}
-
-.col_contact_info {
+.row-dash-upper .col-contacts{
   border-right: 2px solid;
   border-color: var(--spectra-green);
+}
+
+.row-dash-lower{
+  height: 35%;
 }
 

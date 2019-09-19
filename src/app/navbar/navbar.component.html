@@ -19,7 +19,13 @@
 
           
         -->
-        <button (click)="_toggleSidebar()">Toggle sidebar</button>
+        <button
+          (click)="_toggleSidebar()"
+          class="h-100 w-50"
+          style="background-color: var(--spectra-green); border-radius: 2em; color: white; font-size: 2em; border: 2px solid; border-color: white;"
+        >
+          <i class="fa fa-play-circle-o" aria-hidden="true"></i>
+        </button>
       </div>
       <div class="col-lg-5 col-logo">
         <div class="row mx-auto my-auto">
@@ -114,10 +120,13 @@
   </div>
 </nav>
 
-<!-- Container for sidebar(s) + page content -->
-<ng-sidebar-container style="height: 100vh;">
-  <!-- A sidebar -->
-  <ng-sidebar [(opened)]="_opened" style="z-index: 4;">
-    <app-sidebar></app-sidebar>
+<ng-sidebar-container style="position: absolute; height: 94.4vh;">
+  <ng-sidebar showBackdrop="true" [(opened)]="_opened" style="z-index: 1;">
+    <div
+      class="container h-100 p-0"
+      style="width: 20em; background-color: var(--spectra-grey);"
+    >
+      <app-sidebar></app-sidebar>
+    </div>
   </ng-sidebar>
 </ng-sidebar-container>
