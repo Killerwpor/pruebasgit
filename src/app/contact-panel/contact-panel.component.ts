@@ -1,3 +1,4 @@
+import { contact } from './../contact';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,6 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact-panel.component.css']
 })
 export class ContactPanelComponent implements OnInit {
+
+  chosen : contact = {
+    name: "Orion",
+    id: "P3RR0-S4M0Y3D",
+    mail: "orion@dreamhouse.com.co",
+    phone: "+573206115544",
+    company: "Dreamhouse Studios",
+    job: "Vice-president"
+  };
 
   constructor() { }
 

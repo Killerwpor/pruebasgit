@@ -125,5 +125,6 @@ input {
 
   .row-all #dropdownBasic1{
     border-radius: 0em;
+    display: none;
   }
 }

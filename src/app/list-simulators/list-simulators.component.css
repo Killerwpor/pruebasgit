@@ -28,6 +28,7 @@
 
 .image--cover {
   position: absolute;
+  background-color: var(--spectra-green);
   width: 4em;
   height: 4em;
   border-radius: 50%;

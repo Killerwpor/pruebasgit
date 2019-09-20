@@ -23,16 +23,22 @@ export class DashboardComponent implements OnInit {
     this.screenWidth = window.innerWidth;
 
     if(this.screenWidth < 1000){
-      console.log("se cerro la ventana");
       this.onClose();
     }
     else{
-      console.log("se abrio la ventana");
       this.onOpen();
     }
   }
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if(this.screenWidth < 1000){
+      this.onClose();
+    }
+
+    else{
+      this.onOpen();
+    }
+  }
 }

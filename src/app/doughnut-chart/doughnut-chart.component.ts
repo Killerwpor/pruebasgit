@@ -35,7 +35,7 @@ export class DoughnutChartComponent implements OnInit {
     }
   ]
 
-  public progressChartData: MultiDataSet = [
+  public progressChartData = [
     [50,50],
     [80,20],
     [30,70]

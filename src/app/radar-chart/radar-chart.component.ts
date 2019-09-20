@@ -9,8 +9,33 @@ import { ChartDataSets, ChartType, RadialChartOptions } from "chart.js";
 })
 export class RadarChartComponent implements OnInit {
   public radarChartOptions: RadialChartOptions = {
-    responsive: true
+    responsive: true,
+    maintainAspectRatio: true,
+    title: {
+      display: true,
+      text: 'Nombre del grafico de radar',
+      fontColor: 'white'
+    },
+    scale: {
+      ticks: {
+        beginAtZero: true,
+        fontColor: 'blue',
+        fontSize: 15,
+        showLabelBackdrop: true,
+      },
+      pointLabels : {
+        fontColor : '#40b987',
+        fontSize: 15
+      },
+      gridLines: {
+        color: 'white'
+      },
+      angleLines: {
+        color: 'white'
+      }
+    }
   };
+
   public radarChartLabels: Label[] = [
     "Eating",
     "Drinking",
@@ -23,14 +48,13 @@ export class RadarChartComponent implements OnInit {
 
   public radarChartData: ChartDataSets[] = [
     {
-      data: [65, 59, 90, 81, 56, 55, 40],
+      data: [90, 100, 80, 150, 110, 120, 130],
       label: "Series A",
       backgroundColor: "rgba(0, 230, 118,0.5)",
       pointBorderColor: "rgba(0, 230, 118,1.0)",
       pointBackgroundColor: "rgba(0, 230, 118,1.0)",
       borderColor: "rgba(0, 230, 118,1.0)"
-    },
-    { data: [28, 48, 40, 19, 96, 27, 100], label: "Series B" }
+    }
   ];
 
   public radarChartType: ChartType = "radar";
