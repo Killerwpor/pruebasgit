@@ -1,5 +1,3 @@
-@media (max-width: 1000px) {
-}
 
 .navbar {
   background-color: var(--spectra-light-grey);
@@ -26,7 +24,8 @@
   margin: 0;
 }
 
-.navbar .row-all .col-search {
+.navbar .row-all .col-search,
+.navbar .row-all .col-dropdown{
   background-color: var(--spectra-grey);
 }
 
@@ -89,7 +88,10 @@ input {
   border-bottom-right-radius: 3em;
   color: var(--spectra-green);
   background-color: var(--spectra-dark-grey);
-  border: 3px solid;
+  border-right: 3px solid;
+  border-top: 3px solid;
+  border-bottom: 3px solid;
+  border-left: 0px;
   border-color: var(--spectra-green);
 }
 
@@ -98,19 +100,30 @@ input {
   border-bottom-left-radius: 3em;
   color: var(--spectra-green);
   background-color: var(--spectra-dark-grey);
-  border: 3px solid;
+  border-top: 3px solid;
+  border-left: 3px solid;
+  border-bottom: 3px solid;
+  border-right: 0px;
   border-color: var(--spectra-green);
 }
 
-.btn-lg {
-  background-color: var(--spectra-green);
-  border: 3px solid;
-  border-color: white;
-  border-radius: 3em;
-  color: white;
-  font-size: 0.8em;
-}
 
 .mb-3 {
   margin-bottom: 0rem !important;
+}
+
+@media only screen and (max-width: 1000px) {
+  .col-logo{
+    display: none;
+  }
+
+  .row-all .col-lg-1,
+  .row-all .col-lg-4{
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
+
+  .row-all #dropdownBasic1{
+    border-radius: 0em;
+  }
 }
