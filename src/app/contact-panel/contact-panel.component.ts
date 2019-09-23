@@ -10,7 +10,7 @@ export class ContactPanelComponent implements OnInit {
 
   chosen : contact = {
     name: "Orion",
-    id: "P3RR0-S4M0Y3D",
+    id: "S4M0Y3D",
     mail: "orion@dreamhouse.com.co",
     phone: "+573206115544",
     company: "Dreamhouse Studios",

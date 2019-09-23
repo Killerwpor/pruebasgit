@@ -1,0 +1,21 @@
+.container-login{
+    background-color: var(--spectra-grey);
+}
+
+.container-login img{
+    max-width: 100%;
+    height: auto;
+}
+
+.container-logo{
+    min-height: 10em;
+}
+
+.container-card{
+    background-image: url("src/assets/img/UI_spectraAPP_login_bg.png");
+    max-width: 100%;
+    min-height: 20em;
+    height: auto;
+    opacity: 0.5;
+    box-shadow: 0.5em 0.5em 0.5em 0.5em var(--spectra-dark-grey);
+}

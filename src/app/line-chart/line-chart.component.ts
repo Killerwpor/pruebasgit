@@ -11,13 +11,13 @@ export class LineChartComponent implements OnInit {
 
   public lineChartData: ChartDataSets[] = [
     { data: [18, 8, 77, 50, 100, 130, 180], label: 'Progress' },
+    //{ data: [63, 85, 15, 10, 45, 12, 1], label: 'Not Progress' }
   ];
   public lineChartLabels: Label[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
   public lineChartOptions: ChartOptions = {
     responsive: true,
     maintainAspectRatio: true,
     scales: {
-      // We use this empty structure as a placeholder for dynamic theming.
       xAxes: [
         {
           id: 'x-axis-0',

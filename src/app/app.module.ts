@@ -23,6 +23,7 @@ import { ListSimulatorsComponent } from './list-simulators/list-simulators.compo
 import { ListContactsComponent } from './list-contacts/list-contacts.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ContactSearchComponent } from './contact-search/contact-search.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { ContactSearchComponent } from './contact-search/contact-search.componen
     ListContactsComponent,
     LineChartComponent,
     SidebarComponent,
-    ContactSearchComponent
+    ContactSearchComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

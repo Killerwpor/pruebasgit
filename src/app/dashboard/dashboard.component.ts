@@ -1,4 +1,6 @@
+import { simulator } from './../simulator';
 import { Component, OnInit, HostListener } from "@angular/core";
+
 
 @Component({
   selector: "app-dashboard",
@@ -9,14 +11,19 @@ export class DashboardComponent implements OnInit {
   showContent: Boolean = true;
   screenHeight: any;
   screenWidth: any;
+  
+  /* Configurar margenes al cargar paagina */
+  ngOnInit() {
+    if(this.screenWidth < 1000){
+      this.onClose();
+    }
 
-  onOpen() {
-    this.showContent = this.showContent = true;
+    else{
+      this.onOpen();
+    }
   }
-  onClose() {
-    this.showContent = this.showContent = false;
-  }
-
+  
+  /* Automaticamente configurar pagina en caso de cambio de resolucion */
   @HostListener("window:resize", ["$event"])
   onResize(event) {
     this.screenHeight = window.innerHeight;
@@ -30,15 +37,24 @@ export class DashboardComponent implements OnInit {
     }
   }
 
+  /* Funciones para cerrar y abrir el componente de lista de contactos y simuladores */
+  onOpen() {
+    this.showContent = this.showContent = true;
+  }
+  onClose() {
+    this.showContent = this.showContent = false;
+  }
+
+  userSimulators: simulator[] = [
+    {
+      name: "simulador 1"
+    },
+    {
+      name: "simulador 2"
+    }
+  ]
+
+
   constructor() {}
 
-  ngOnInit() {
-    if(this.screenWidth < 1000){
-      this.onClose();
-    }
-
-    else{
-      this.onOpen();
-    }
-  }
 }

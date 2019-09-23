@@ -29,6 +29,7 @@
 .image--cover {
   position: absolute;
   background-color: var(--spectra-green);
+  vertical-align: middle;
   width: 4em;
   height: 4em;
   border-radius: 50%;
@@ -39,4 +40,9 @@
   border: 2px solid;
   border-color: white;
   z-index: 1;
+}
+
+.image--cover i{
+  color: white;
+  font-size: 1.5em;
 }

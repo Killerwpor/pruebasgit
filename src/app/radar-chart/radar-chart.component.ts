@@ -49,12 +49,12 @@ export class RadarChartComponent implements OnInit {
   public radarChartData: ChartDataSets[] = [
     {
       data: [90, 100, 80, 150, 110, 120, 130],
-      label: "Series A",
+      label: "Habitos",
       backgroundColor: "rgba(0, 230, 118,0.5)",
       pointBorderColor: "rgba(0, 230, 118,1.0)",
       pointBackgroundColor: "rgba(0, 230, 118,1.0)",
       borderColor: "rgba(0, 230, 118,1.0)"
-    }
+    },
   ];
 
   public radarChartType: ChartType = "radar";

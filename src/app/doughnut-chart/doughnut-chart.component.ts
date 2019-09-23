@@ -15,7 +15,7 @@ export class DoughnutChartComponent implements OnInit {
   }
   
   public doughnutChartData: MultiDataSet = [
-    [60,40],
+    [60,40,52],
     [50,50],
     [30,70],
   ];

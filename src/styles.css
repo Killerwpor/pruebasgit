@@ -54,6 +54,26 @@
   border-color: crimson;
 }
 
+.test-yellow{
+  border: 2px solid;
+  border-color: yellow;
+}
+
+.test-white{
+  border: 2px solid;
+  border-color: white;
+}
+
+.test-orange {
+  border: 2px solid;
+  border-color: orange;
+}
+
+.test-silver {
+  border-color: 2px solid;
+  border-color: silver;
+}
+
 body {
   background-color: var(--spectra-grey);
 }

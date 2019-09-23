@@ -1,3 +1,7 @@
+// Login
+import { LoginComponent } from './login/login.component';
+
+// Dashboard
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { ChartPanelComponent } from "./chart-panel/chart-panel.component";
@@ -9,7 +13,11 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
 const routes: Routes = [
-  { path: "", redirectTo: "/dash/chart-panel", pathMatch: "full" },
+  { path: "", redirectTo: "/login", pathMatch: "full" },
+  {
+    path: "login",
+    component: LoginComponent
+  },
   {
     path: "dash",
     component: DashboardComponent,
