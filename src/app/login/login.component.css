@@ -41,7 +41,7 @@
   padding-right: 0.5em;
 }
 
-.container-card .row-buttons button {
+.btn-skew {
   font-family: "tex";
   transform: skew(-21deg);
   border-top-right-radius: 3em;
@@ -54,12 +54,59 @@
   color: white;
 }
 
-.container-card .row-buttons button:hover {
+.btn-skew:hover {
   background-color: var(--spectra-green);
 }
 
-.container-card .row-buttons button h5 {
+.btn-skew h5 {
   transform: skew(21deg);
+}
+
+.btn-skew-inv {
+  font-family: "tex";
+  transform: skew(-21deg);
+  border-top-right-radius: 3em;
+  border-bottom-right-radius: 2em;
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 1.5em;
+  max-height: 3em;
+  min-width: 7em;
+  background-color: var(--spectra-green);
+  color: white;
+}
+
+.btn-skew-inv h5{
+    transform: skew(21deg);
+}
+
+.modal-full {
+  min-width: 100%;
+  margin: 0;
+}
+
+.modal-header, .modal-footer {
+  border: 0px solid;
+}
+
+.modal-content {
+  height: auto;
+  border-radius: 0;
+  min-height: 30em;
+  background-color: var(--spectra-grey);
+}
+
+.modal-content .modal-warning {
+  color: white;
+  font-family: "tex";
+}
+
+.modal-content form input {
+  height: 3em;
+  background-color: var(--spectra-dark-grey);
+  border-color: var(--spectra-green);
+  border: 2px solid;
+  color: var(--spectra-green);
+  font-family: "tex";
 }
 
 @media only screen and (max-width: 1000px) {
