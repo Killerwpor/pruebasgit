@@ -24,6 +24,7 @@ import { ListContactsComponent } from './list-contacts/list-contacts.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ContactSearchComponent } from './contact-search/contact-search.component';
 import { LoginComponent } from './login/login.component';
+import { UserFormComponent } from './user-form/user-form.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { LoginComponent } from './login/login.component';
     LineChartComponent,
     SidebarComponent,
     ContactSearchComponent,
-    LoginComponent
+    LoginComponent,
+    UserFormComponent
   ],
   imports: [
     BrowserModule,

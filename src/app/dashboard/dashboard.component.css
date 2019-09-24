@@ -24,3 +24,10 @@
   height: 35%;
 }
 
+.row-add{
+  min-height: 94vh;
+}
+
+.row-add div{
+  background-color: var(--spectra-grey);
+}

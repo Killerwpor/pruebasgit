@@ -9,13 +9,23 @@
       </div>
     </div>
 
+    <!-- Agregar usuario -->
+    <div class="row w-100 row-add test-green" style="min-height: 84vh;" *ngIf="add">
+      <div class="col-lg-5 h-100 test-blue">
+        <div class="container test-orange h-100">
+          <app-user-form></app-user-form>
+        </div>
+      </div>
+      <div class="col-lg-7 h-100 test-crimson"></div>
+    </div>
+
     <!-- dashboard general -->
-    <div class="row w-100 row-dash">
+    <div class="row w-100 row-dash" *ngIf="dash">
       <!-- 
         Panel de lista de contactos del dash, en caso de tamanio de ventana menor
         a 1000 px se esconde en el navbar  
       -->
-      <div *ngIf="showContent" class="col-lg-2 p-0" style="min-height: 94vh;">
+      <div *ngIf="showSidebar" class="col-lg-2 p-0" style="min-height: 94vh;">
         <div class="row w-100 h-25">
           <!-- simuladores -->
           <div class="col-lg-12 p-0">

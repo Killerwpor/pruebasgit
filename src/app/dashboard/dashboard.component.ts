@@ -8,7 +8,9 @@ import { Component, OnInit, HostListener } from "@angular/core";
   styleUrls: ["./dashboard.component.css"]
 })
 export class DashboardComponent implements OnInit {
-  showContent: Boolean = true;
+  dash: Boolean = false
+  add: Boolean = true;
+  showSidebar: Boolean = true;
   screenHeight: any;
   screenWidth: any;
   
@@ -39,10 +41,10 @@ export class DashboardComponent implements OnInit {
 
   /* Funciones para cerrar y abrir el componente de lista de contactos y simuladores */
   onOpen() {
-    this.showContent = this.showContent = true;
+    this.showSidebar = this.showSidebar = true;
   }
   onClose() {
-    this.showContent = this.showContent = false;
+    this.showSidebar = this.showSidebar = false;
   }
 
   userSimulators: simulator[] = [
