@@ -8,7 +8,7 @@ import { Component, OnInit, HostListener } from "@angular/core";
   styleUrls: ["./dashboard.component.css"]
 })
 export class DashboardComponent implements OnInit {
-  dash: Boolean = false
+  dash: Boolean = false;
   add: Boolean = true;
   showSidebar: Boolean = true;
   screenHeight: any;

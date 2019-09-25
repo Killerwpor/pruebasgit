@@ -1,9 +1,9 @@
-.col-profile-picture{
-    min-height: 100%;
+.col-profile-picture {
+  min-height: 100%;
 }
 
-.col-privileges{
-    min-height: 100% !important;
+.col-privileges {
+  min-height: 100% !important;
 }
 
 .profile-picture {
@@ -48,4 +48,17 @@
   z-index: 0;
   border: 2px solid;
   border-color: white;
+}
+
+.row-data{
+  height: 35em;
+}
+
+.row-data input {
+  height: 3em;
+  background-color: var(--spectra-dark-grey);
+  border-color: var(--spectra-green);
+  border: 2px solid;
+  color: var(--spectra-green);
+  font-family: "tex";
 }
