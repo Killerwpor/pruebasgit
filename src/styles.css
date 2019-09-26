@@ -138,7 +138,6 @@ canvas {
   scrollbar-width: none;
 }
 
-
 /* slider toggle */
 
 .switch {
@@ -148,7 +147,7 @@ canvas {
   height: 34px;
 }
 
-.switch input { 
+.switch input {
   opacity: 0;
   width: 0;
   height: 0;
@@ -162,8 +161,8 @@ canvas {
   right: 0;
   bottom: 0;
   background-color: var(--spectra-grey);
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -174,8 +173,8 @@ canvas {
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {

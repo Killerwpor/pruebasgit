@@ -11,29 +11,40 @@
 
     <!-- Agregar usuario -->
     <div
-      class="row w-100 row-add test-green"
+      class="row w-100 row-add"
       style="min-height: 94vh;"
       *ngIf="add"
     >
-      <div class="col-lg-5 h-100 test-blue">
-        <div class="container test-orange h-100">
-          <app-user-form></app-user-form>
+      <div class="col-lg-5 my-auto">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 my-auto">
+              <app-user-form></app-user-form>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-lg-7 h-100 test-crimson">
-        <div class="container test-white h-85">
+      <div class="col-lg-7 my-auto">
+        <div class="container">
           <div class="row">
             <div class="col-lg-12 my-auto">
               <app-simulator-form></app-simulator-form>
             </div>
           </div>
         </div>
-        <div class="container test-white h-15">
+        <div class="filler" style="margin: 3em;"></div>
+        <div class="container h-15">
           <div class="row h-100">
             <div class="col-lg-8"></div>
-            <div class="col-lg-2 h-100 my-auto test-white">
+            <div class="col-lg-2 h-100 my-auto text-center">
+              <button type="button" class="btn btn-skew">
+                <h5>Guardar</h5>
+              </button>
             </div>
-            <div class="col-lg-2 h-100 my-auto test-white">
+            <div class="col-lg-2 h-100 my-auto text-center">
+              <button type="button" class="btn btn-skew">
+                <h5>Limpiar</h5>
+              </button>
             </div>
           </div>
         </div>

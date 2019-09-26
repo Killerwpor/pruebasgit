@@ -1,7 +1,7 @@
 .simulator-list {
   border-radius: 2em;
   background-color: var(--spectra-dark-grey);
-  height: 36em;
+  min-height: 36em;
 }
 
 .simulator-list .row-simulator {
