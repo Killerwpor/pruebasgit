@@ -20,6 +20,12 @@ export class NavbarComponent implements OnInit {
     this.screenHeight = window.innerHeight;
     this.screenWidth = window.innerWidth;
 
+    if(this.screenWidth < 1000){
+      this.visible =  true;
+      this.toggle();
+
+      this._opened = false;
+    }
   }
 
   // sidebar

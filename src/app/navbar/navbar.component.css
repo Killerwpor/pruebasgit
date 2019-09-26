@@ -59,6 +59,10 @@
   border-bottom-left-radius: 4em;
 }
 
+.dropdown-toggle::after {
+  display:none;
+}
+
 .navbar .row-all .dropdown-btns {
   background-color: var(--spectra-light-grey);
   width: 80%;

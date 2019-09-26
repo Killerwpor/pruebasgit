@@ -72,3 +72,9 @@
 .btn-skew-inv h5 {
   transform: skew(21deg);
 }
+
+@media only screen and (max-width: 1000px) {
+  .responsive-filler {
+    margin: 0.5em;
+  }
+}

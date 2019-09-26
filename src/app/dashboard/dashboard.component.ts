@@ -8,8 +8,8 @@ import { Component, OnInit, HostListener } from "@angular/core";
   styleUrls: ["./dashboard.component.css"]
 })
 export class DashboardComponent implements OnInit {
-  dash: Boolean = false;
-  add: Boolean = true;
+  dash: Boolean = true;
+  add: Boolean = false;
   showSidebar: Boolean = true;
   screenHeight: any;
   screenWidth: any;
@@ -45,6 +45,11 @@ export class DashboardComponent implements OnInit {
   }
   onClose() {
     this.showSidebar = this.showSidebar = false;
+  }
+
+  addUser(){
+    this.dash = !this.dash;
+    this.add = !this.add;
   }
 
   userSimulators: simulator[] = [
