@@ -1,13 +1,10 @@
 textarea{
     resize: none;
     border: none;
-    border-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
 }
 
-.form-group{
-    padding-top: 1.5em;
-}
-
-.form-control:disabled{
+.form-control{
     background-color: var(--spectra-dark-grey);
 }

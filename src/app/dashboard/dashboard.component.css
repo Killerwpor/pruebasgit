@@ -32,6 +32,14 @@
   background-color: var(--spectra-grey);
 }
 
+.row-sidebar-simulators{
+  overflow: auto;
+}
+
+.row-sidebar-contacts{
+  overflow: auto;
+}
+
 /*Skew button*/
 .btn-skew {
   border: 1px solid;
