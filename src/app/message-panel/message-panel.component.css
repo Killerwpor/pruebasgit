@@ -1,10 +1,31 @@
-textarea{
-    resize: none;
-    border: none;
-    border-bottom-right-radius: 0.5em;
-    border-bottom-left-radius: 0.5em;
+textarea {
+  resize: none;
+  border: none;
+  border-bottom-right-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
 }
 
-.form-control{
-    background-color: var(--spectra-dark-grey);
+.form-control {
+  background-color: var(--spectra-dark-grey);
+}
+
+.top-bar {
+  background-color: var(--spectra-dark-grey);
+  height: 3em;
+  border-bottom: 2px solid;
+  border-color: var(--spectra-green);
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+}
+
+.tab {
+  position: absolute;
+  bottom: 0;
+  width: 140px;
+  position: relative;
+  background-color: var(--spectra-green);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
 }

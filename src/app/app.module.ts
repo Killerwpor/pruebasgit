@@ -9,8 +9,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { SidebarModule } from 'ng-sidebar';
 
-
 import { ChartsModule } from 'ng2-charts';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -56,7 +56,8 @@ import { SimulatorFormComponent } from './simulator-form/simulator-form.componen
     ChartsModule,
     NgbModule,
     AngularFontAwesomeModule,
-    SidebarModule.forRoot()
+    SidebarModule.forRoot(),
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
