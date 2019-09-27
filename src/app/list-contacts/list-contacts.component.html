@@ -1,11 +1,12 @@
 <div class="container-flex">
   <div class="container container-list">
     <div class="row row-simulator" *ngFor="let contact of contacts">
-      <div class="col-lg-12">
+      <div class="col-lg-12" (click)="selectContact(contact)">
         <div class="container-button">
           <img
-            src="https://i.kinja-img.com/gawker-media/image/upload/gd8ljenaeahpn0wslmlz.jpg"
+            src={{contact.photoUrl}}
             class="image--cover"
+            style="background-color: var(--spectra-green);"
           />
           <button
             type="button"
@@ -16,7 +17,7 @@
                 <p class="tex-bold">{{contact.name}}</p>
               </div>
               <div class="col-lg-12">
-                <p class="tex">{{contact.name}}</p>
+                <p class="tex">{{contact.phone}}</p>
               </div>
             </div>
           </button>
