@@ -1,13 +1,24 @@
 import { contact } from "./../contact";
 import { simulator } from "./../simulator";
-import { Component, OnInit, HostListener } from "@angular/core";
+import { MessagePanelComponent } from '../message-panel/message-panel.component';
+import { Component, OnInit, HostListener, ViewChild } from "@angular/core";
+
+/* 
+  Nota: Dashboard es el componente principal de la pagina, contiene la 
+  informacion de los simuladores, incluidos los contactos, mensajes sobre
+  el simulador, graficas y progreso. Tambien se encuentra la forma para agregar
+  usuarios nuevos a un simulador.
+*/
 
 @Component({
   selector: "app-dashboard",
   templateUrl: "./dashboard.component.html",
-  styleUrls: ["./dashboard.component.css"]
+  styleUrls: ["./dashboard.component.css"],
 })
 export class DashboardComponent implements OnInit {
+
+  @ViewChild(MessagePanelComponent, {static: false}) msgPanel: MessagePanelComponent;
+
   dash: Boolean = true;
   add: Boolean = false;
   showSidebar: Boolean = true;
@@ -26,6 +37,7 @@ export class DashboardComponent implements OnInit {
     //Inicia la lista de contactos segun el primer simulador de la lista
     this.selectedSimulator = this.simulatorList[0];
 
+    //En el panel de contacto coloca el primer contacto de la lista para llenar espacio vacio
     this.selectedContact = this.simulatorList[0].contacts[0];
   }
 
@@ -56,11 +68,15 @@ export class DashboardComponent implements OnInit {
     this.add = !this.add;
   }
 
+  //Cambiar el simulador mostrado en el dashboard
   changeSimulator(newSim) {
-    this.selectedSimulator = newSim;
+    this.selectedSimulator = newSim; 
+    this.changeContact(this.selectedSimulator.contacts[0]);
+    this.msgPanel.chosenText = this.selectedSimulator.messages[0];
   }
 
-  changeContact(newCon){
+  //Cambiar el contacto para el componente de contact panel
+  changeContact(newCon) {
     this.selectedContact = newCon;
   }
 
@@ -77,10 +93,15 @@ export class DashboardComponent implements OnInit {
         phone: "",
         company: "",
         job: ""
-      }
+      },
+    ],
+    messages: [
+      "",
+      ""
     ]
   };
 
+  //El contacto que ha sido seleccionado
   selectedContact: contact = {
     name: "",
     id: "",
@@ -92,6 +113,13 @@ export class DashboardComponent implements OnInit {
   };
 
   // Lista de todos los datos de los simuladores
+  /* 
+    La clase simulador debe de tener los siguientes parametros:
+    - name: string -> el nombre del simulador
+    - icon: string -> el icono que se le asocia al simulador, los diferentes tipos de iconos son puestos en los componentes
+    - contacts: contact[] -> arreglo de contactos, ver archivo contact.ts para ver estructura de los contactos
+    - messages: string[] -> tupla de string que son puestas en el cuadro de texto en la parte inferior del dash  
+  */
   simulatorList: simulator[] = [
     {
       name: "Seguridad",
@@ -160,6 +188,10 @@ export class DashboardComponent implements OnInit {
           company: "Capsule Corporation",
           job: "Fighter"
         }
+      ],
+      messages: [
+        "Mensaje de conduccion\nOtro mensaje de conduccion",
+        "Observacion de conduccion\nOtro mensaje de conduccion"
       ]
     },
     {
@@ -220,6 +252,10 @@ export class DashboardComponent implements OnInit {
           company: "Springfield Nuclear Plant",
           job: "Security Inspector"
         }
+      ],
+      messages: [
+        "Mensaje de cadaveres\notro mensaje de cadaveres",
+        "observacion de cadaveres\notra observacion de cadaveres"
       ]
     }
   ];

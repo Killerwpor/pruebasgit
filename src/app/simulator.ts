@@ -3,4 +3,5 @@ export class simulator{
     name: string;
     icon: string;
     contacts: contact[];
+    messages: string[];
 }
