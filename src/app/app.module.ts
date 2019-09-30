@@ -26,6 +26,7 @@ import { ContactSearchComponent } from './contact-search/contact-search.componen
 import { LoginComponent } from './login/login.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { SimulatorFormComponent } from './simulator-form/simulator-form.component';
+import { ProgressPanelComponent } from './progress-panel/progress-panel.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { SimulatorFormComponent } from './simulator-form/simulator-form.componen
     ContactSearchComponent,
     LoginComponent,
     UserFormComponent,
-    SimulatorFormComponent
+    SimulatorFormComponent,
+    ProgressPanelComponent
   ],
   imports: [
     BrowserModule,

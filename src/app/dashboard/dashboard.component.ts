@@ -1,6 +1,9 @@
+import { ProgressPanelComponent } from './../progress-panel/progress-panel.component';
+import { ChartPanelComponent } from './../chart-panel/chart-panel.component';
+import { MessagePanelComponent } from '../message-panel/message-panel.component';
+
 import { contact } from "./../contact";
 import { simulator } from "./../simulator";
-import { MessagePanelComponent } from '../message-panel/message-panel.component';
 import { Component, OnInit, HostListener, ViewChild } from "@angular/core";
 
 /* 
@@ -17,13 +20,29 @@ import { Component, OnInit, HostListener, ViewChild } from "@angular/core";
 })
 export class DashboardComponent implements OnInit {
 
-  @ViewChild(MessagePanelComponent, {static: false}) msgPanel: MessagePanelComponent;
 
+  
+  //Declaracion de los diferentes paneles
+  @ViewChild(MessagePanelComponent, {static: false}) msgPanel: MessagePanelComponent;
+  @ViewChild(ChartPanelComponent, {static: false}) chartPanel: ChartPanelComponent;
+  @ViewChild(ProgressPanelComponent, {static: false}) progresspanel: ProgressPanelComponent;
+  
   dash: Boolean = true;
   add: Boolean = false;
   showSidebar: Boolean = true;
   screenHeight: any;
   screenWidth: any;
+  //El simulador que ha sido seleccionado
+  selectedSimulator: simulator;
+  //El contacto que ha sido seleccionado
+  selectedContact: contact;
+
+  ANCHOR //colores para las graficas
+  spectraGreen: string = "#40b987";
+  spectraBlue: string = "rgba(0, 229, 255,1.0)";
+  spectraRed: string = "rgba(255, 82, 82,1.0)";
+  
+
 
   /* Configurar margenes al cargar paagina */
   ngOnInit() {
@@ -70,9 +89,12 @@ export class DashboardComponent implements OnInit {
 
   //Cambiar el simulador mostrado en el dashboard
   changeSimulator(newSim) {
-    this.selectedSimulator = newSim; 
+    //Determinar nuevo simulador
+    this.selectedSimulator = newSim;
+    //Cambiar el contacto en la 
     this.changeContact(this.selectedSimulator.contacts[0]);
     this.msgPanel.chosenText = this.selectedSimulator.messages[0];
+    this.progresspanel.changeProgress(0);
   }
 
   //Cambiar el contacto para el componente de contact panel
@@ -80,37 +102,7 @@ export class DashboardComponent implements OnInit {
     this.selectedContact = newCon;
   }
 
-  //El simulador que ha sido seleccionado
-  selectedSimulator: simulator = {
-    name: "",
-    icon: "",
-    contacts: [
-      {
-        name: "",
-        id: "",
-        photoUrl: "",
-        mail: "",
-        phone: "",
-        company: "",
-        job: ""
-      },
-    ],
-    messages: [
-      "",
-      ""
-    ]
-  };
 
-  //El contacto que ha sido seleccionado
-  selectedContact: contact = {
-    name: "",
-    id: "",
-    photoUrl: "",
-    mail: "",
-    phone: "",
-    company: "",
-    job: ""
-  };
 
   // Lista de todos los datos de los simuladores
   /* 
@@ -190,8 +182,61 @@ export class DashboardComponent implements OnInit {
         }
       ],
       messages: [
-        "Mensaje de conduccion\nOtro mensaje de conduccion",
-        "Observacion de conduccion\nOtro mensaje de conduccion"
+        "Se termino un modulo de conduccion\nSe hizo la prueba de el mareo de las personas\nSe decidio hacer los carros de colores brillantes",
+        "Las personas experimentan mareo al usar el simulador\nHubo un bug en una interseccion\nLos semaforos no funcionaron"
+      ],
+      //ANCHOR progreso simulador 1
+      progress: [
+        //Progreso de Programacion 
+        {
+          values: [
+            [80,20]
+          ],
+          colors: [
+            { 
+              backgroundColor: [this.spectraGreen, 'rgba(0,0,0,0)'],
+              borderColor: this.spectraGreen
+            }
+          ],
+          labels: [
+            "completo",
+            "incompleto"
+          ]
+        },
+
+        //Progreso de Arte
+        {
+          values: [
+            [30,70]
+          ],
+          colors: [
+            { 
+              backgroundColor: [this.spectraBlue, 'rgba(0,0,0,0)'],
+              borderColor: this.spectraBlue
+            }
+          ],
+          labels: [
+            "completo",
+            "incompleto"
+          ]
+        },
+
+        //Progreso Sonido
+        {
+          values: [
+            [55,45]
+          ],
+          colors: [
+            { 
+              backgroundColor: [this.spectraRed, 'rgba(0,0,0,0)'],
+              borderColor: this.spectraRed
+            }
+          ],
+          labels: [
+            "completo",
+            "incompleto"
+          ]
+        }
       ]
     },
     {
@@ -254,8 +299,62 @@ export class DashboardComponent implements OnInit {
         }
       ],
       messages: [
-        "Mensaje de cadaveres\notro mensaje de cadaveres",
-        "observacion de cadaveres\notra observacion de cadaveres"
+        "Se termino el simulador\nSe hizo la prueba final\nSe cambiaron los modelos de los cadaveres por modelos mas reales",
+        "Hubo un bug el dia de la demonstracion\nUna persona sufrio de mareo"
+      ],
+
+      //ANCHOR progreso simulador 2
+      progress: [
+        //Progreso de Programacion 
+        {
+          values: [
+            [90,10]
+          ],
+          colors: [
+            { 
+              backgroundColor: [this.spectraGreen, 'rgba(0,0,0,0)'],
+              borderColor: this.spectraGreen
+            }
+          ],
+          labels: [
+            "completo",
+            "incompleto"
+          ]
+        },
+
+        //Progreso de Arte
+        {
+          values: [
+            [5,95]
+          ],
+          colors: [
+            { 
+              backgroundColor: [this.spectraBlue, 'rgba(0,0,0,0)'],
+              borderColor: this.spectraBlue
+            }
+          ],
+          labels: [
+            "completo",
+            "incompleto"
+          ]
+        },
+
+        //Progreso Sonido
+        {
+          values: [
+            [50,50]
+          ],
+          colors: [
+            { 
+              backgroundColor: [this.spectraRed, 'rgba(0,0,0,0)'],
+              borderColor: this.spectraRed
+            }
+          ],
+          labels: [
+            "completo",
+            "incompleto"
+          ]
+        }
       ]
     }
   ];

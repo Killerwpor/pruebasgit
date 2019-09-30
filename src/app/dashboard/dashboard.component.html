@@ -111,7 +111,10 @@
             </app-message-panel>
           </div>
           <div class="col-lg-5 my-auto">
-            <app-doughnut-chart></app-doughnut-chart>
+            <app-progress-panel
+            [progressCharts] = "selectedSimulator.progress"
+            >
+            </app-progress-panel>
           </div>
         </div>
       </div>

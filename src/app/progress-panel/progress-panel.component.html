@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-9">
+      <app-doughnut-chart
+        [doughnutChartData]="chosenProgress.values"
+        [doughnutColors]="chosenProgress.colors"
+        [doughnutChartLabels]="chosenProgress.labels"
+      >
+      </app-doughnut-chart>
+    </div>
+    <div class="col-lg-3">
+      <div class="row" (click)="changeProgress(0)">
+        <div class="col-lg-10 p-0 my-auto">
+         <p class="tex m-0">Programacion</p> 
+        </div>
+      </div>
+      <div class="row" (click)="changeProgress(1)">
+        <div class="col-lg-10 p-0 my-auto">
+         <p class="tex m-0">Arte</p> 
+        </div>
+      </div>
+      <div class="row" (click)="changeProgress(2)">
+        <div class="col-lg-10 p-0 my-auto">
+         <p class="tex m-0">Sonido</p> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
+
+    <div class="col-lg-2">
+      <div ngbDropdown class="d-inline-block">
+        <button
+          class="btn btn-outline-primary"
+          id="dropdownprogress"
+          ngbDropdownToggle
+        >
+          Progreso
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownprogress">
+          <button ngbDropdownItem (click)="changeProgress(0)">
+            Programacion
+          </button>
+          <button ngbDropdownItem (click)="changeProgress(1)">Arte</button>
+          <button ngbDropdownItem (click)="changeProgress(2)">Sonido</button>
+        </div>
+      </div>
+    </div>
+
+-->

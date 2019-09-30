@@ -1,0 +1,10 @@
+.tex:hover{
+    cursor: pointer;
+}
+
+.dot-development{
+    background-color: var(--spectra-green);
+    border-radius: 50%;
+    height: 1em;
+    width: 1em;
+}

@@ -13,17 +13,21 @@ export class DoughnutChartComponent implements OnInit {
     responsive: true,
     maintainAspectRation: true
   }
+
+  @Input() doughnutChartData: MultiDataSet;
+  @Input() doughnutColors: Array<any>;
+  @Input() doughnutChartLabels;
+
+  /*
   
   public doughnutChartData: MultiDataSet = [
-    [60,40],
-    [50,50],
-    [30,70],
+    [60,40]
   ];
 
   public doughnutColors: Array<any> = [
     { 
       backgroundColor: ['#40b987', 'rgba(0,0,0,0)'],
-      borderColor: 'rgba(0,0,0,0)'
+      borderColor: '#40b987'
     },
     { 
       backgroundColor: ['rgba(0, 229, 255,1.0)', 'rgba(0,0,0,0)'],
@@ -35,13 +39,10 @@ export class DoughnutChartComponent implements OnInit {
     }
   ]
 
-  public progressChartData = [
-    [50,50],
-    [80,20],
-    [30,70]
-  ];
-
-  public doughnutChartLabels = ["hola", ""];
+  public doughnutChartLabels = ["Completo", "Faltante"];
+  
+  
+  */
   public doughnutChartType = "doughnut";
 
   constructor() { }
