@@ -11,7 +11,7 @@
     </div>
   </div>
   <div class="col-lg-8 tex my-auto col-name-simulator">
-    <h5>Nombre del simulador</h5>
+    <h5>{{name}}</h5>
   </div>
   <div class="col-lg-2 my-auto">
     <div ngbDropdown class="d-inline-block">
@@ -23,13 +23,9 @@
         Charts
       </button>
       <div ngbDropdownMenu aria-labelledby="dropdowncharts">
-        <button ngbDropdownItem routerLink="./bar-chart">Bar</button>
-        <button ngbDropdownItem routerLink="./doughnut-chart">
-          Doughnut
-        </button>
-        <button ngbDropdownItem routerLink="./radar-chart">Radar</button>
-        <button ngbDropdownItem routerLink="./pie-chart">Pie</button>
-        <button ngbDropdownItem routerLink="./line-chart">Line</button>
+        <div *ngFor="let bar of charts.barCharts; let i=index">
+          <button ngbDropdownItem (click)="loadChart('bar',i)">Hola</button>
+        </div>
       </div>
     </div>
   </div>
@@ -37,6 +33,6 @@
 
 <div class="row">
   <div class="col-lg-12">
-    <router-outlet></router-outlet>
+    <app-bar-chart *ngIf="barToggle" [barChartLabels]="chosenChart.barLabels" [barChartData] = "chosenChart.barSeries"></app-bar-chart>
   </div>
 </div>

@@ -1,10 +1,12 @@
-import { ProgressPanelComponent } from './../progress-panel/progress-panel.component';
-import { ChartPanelComponent } from './../chart-panel/chart-panel.component';
-import { MessagePanelComponent } from '../message-panel/message-panel.component';
+import { barData } from "./../barData";
+import { ProgressPanelComponent } from "./../progress-panel/progress-panel.component";
+import { ChartPanelComponent } from "./../chart-panel/chart-panel.component";
+import { MessagePanelComponent } from "../message-panel/message-panel.component";
 
 import { contact } from "./../contact";
 import { simulator } from "./../simulator";
 import { Component, OnInit, HostListener, ViewChild } from "@angular/core";
+import { doughnutData } from "../doughnutData";
 
 /* 
   Nota: Dashboard es el componente principal de la pagina, contiene la 
@@ -16,17 +18,19 @@ import { Component, OnInit, HostListener, ViewChild } from "@angular/core";
 @Component({
   selector: "app-dashboard",
   templateUrl: "./dashboard.component.html",
-  styleUrls: ["./dashboard.component.css"],
+  styleUrls: ["./dashboard.component.css"]
 })
 export class DashboardComponent implements OnInit {
-
-
-  
   //Declaracion de los diferentes paneles
-  @ViewChild(MessagePanelComponent, {static: false}) msgPanel: MessagePanelComponent;
-  @ViewChild(ChartPanelComponent, {static: false}) chartPanel: ChartPanelComponent;
-  @ViewChild(ProgressPanelComponent, {static: false}) progresspanel: ProgressPanelComponent;
-  
+  @ViewChild(MessagePanelComponent, { static: false })
+  msgPanel: MessagePanelComponent;
+  @ViewChild(ChartPanelComponent, { static: false })
+  chartPanel: ChartPanelComponent;
+  @ViewChild(ProgressPanelComponent, { static: false })
+  progresspanel: ProgressPanelComponent;
+  @ViewChild(ChartPanelComponent, { static: false })
+  chartspanel: ProgressPanelComponent;
+
   dash: Boolean = true;
   add: Boolean = false;
   showSidebar: Boolean = true;
@@ -37,12 +41,10 @@ export class DashboardComponent implements OnInit {
   //El contacto que ha sido seleccionado
   selectedContact: contact;
 
-  ANCHOR //colores para las graficas
+  ANCHOR; //colores para las graficas
   spectraGreen: string = "#40b987";
   spectraBlue: string = "rgba(0, 229, 255,1.0)";
   spectraRed: string = "rgba(255, 82, 82,1.0)";
-  
-
 
   /* Configurar margenes al cargar paagina */
   ngOnInit() {
@@ -91,18 +93,17 @@ export class DashboardComponent implements OnInit {
   changeSimulator(newSim) {
     //Determinar nuevo simulador
     this.selectedSimulator = newSim;
-    //Cambiar el contacto en la 
+    //Cambiar el contacto en la
     this.changeContact(this.selectedSimulator.contacts[0]);
     this.msgPanel.chosenText = this.selectedSimulator.messages[0];
     this.progresspanel.changeProgress(0);
+    this.chartPanel.refreshCharts();
   }
 
   //Cambiar el contacto para el componente de contact panel
   changeContact(newCon) {
     this.selectedContact = newCon;
   }
-
-
 
   // Lista de todos los datos de los simuladores
   /* 
@@ -119,7 +120,7 @@ export class DashboardComponent implements OnInit {
       contacts: [
         {
           name: "Orion",
-          id: "S4M0Y3D",
+          id: "GoodboiOrion",
           photoUrl: "assets/img/testing/orion.jpg",
           mail: "orion@dreamhousedtudios.com",
           phone: "3206115544",
@@ -185,59 +186,82 @@ export class DashboardComponent implements OnInit {
         "Se termino un modulo de conduccion\nSe hizo la prueba de el mareo de las personas\nSe decidio hacer los carros de colores brillantes",
         "Las personas experimentan mareo al usar el simulador\nHubo un bug en una interseccion\nLos semaforos no funcionaron"
       ],
-      //ANCHOR progreso simulador 1
       progress: [
-        //Progreso de Programacion 
+        //Progreso de Programacion
         {
-          values: [
-            [80,20]
-          ],
+          chartName: "Desarrollo",
+          values: [[80, 20]],
           colors: [
-            { 
-              backgroundColor: [this.spectraGreen, 'rgba(0,0,0,0)'],
+            {
+              backgroundColor: [this.spectraGreen, "rgba(0,0,0,0)"],
               borderColor: this.spectraGreen
             }
           ],
-          labels: [
-            "completo",
-            "incompleto"
-          ]
+          labels: ["completo", "incompleto"]
         },
 
         //Progreso de Arte
         {
-          values: [
-            [30,70]
-          ],
+          chartName: "Arte",
+          values: [[30, 70]],
           colors: [
-            { 
-              backgroundColor: [this.spectraBlue, 'rgba(0,0,0,0)'],
+            {
+              backgroundColor: [this.spectraBlue, "rgba(0,0,0,0)"],
               borderColor: this.spectraBlue
             }
           ],
-          labels: [
-            "completo",
-            "incompleto"
-          ]
+          labels: ["completo", "incompleto"]
         },
 
         //Progreso Sonido
         {
-          values: [
-            [55,45]
-          ],
+          chartName: "Sonido",
+          values: [[55, 45]],
           colors: [
-            { 
-              backgroundColor: [this.spectraRed, 'rgba(0,0,0,0)'],
+            {
+              backgroundColor: [this.spectraRed, "rgba(0,0,0,0)"],
               borderColor: this.spectraRed
             }
           ],
-          labels: [
-            "completo",
-            "incompleto"
-          ]
+          labels: ["completo", "incompleto"]
         }
-      ]
+      ],
+      //ANCHOR charts 1
+      charts: {
+        barCharts: [
+          {
+            chartName: "barra conduccion",
+            barLabels: ["Label 1", "Label 2", "Label 3", "Label 4"],
+            barSeries: [
+              {
+                data: [65, 42, 54, 12],
+                label: "Metrica",
+                backgroundColor: this.spectraGreen,
+                hoverBackgroundColor: this.spectraGreen,
+                borderColor: this.spectraGreen
+              }
+            ]
+          },
+          {
+            chartName: "barra conduccion 2",
+            barLabels: ["Label 1", "Label 2", "Label 3", "Label 4"],
+            barSeries: [
+              {
+                data: [99, 99, 99, 99],
+                label: "Metrica",
+                backgroundColor: this.spectraGreen,
+                hoverBackgroundColor: this.spectraGreen,
+                borderColor: this.spectraGreen
+              }
+            ]
+          }
+        ],
+
+        doughnutCharts: [],
+        radarCharts: [],
+        pieCharts: [],
+        lineCharts: []
+      }
     },
     {
       name: "Cadaveres",
@@ -303,29 +327,107 @@ export class DashboardComponent implements OnInit {
         "Hubo un bug el dia de la demonstracion\nUna persona sufrio de mareo"
       ],
 
-      //ANCHOR progreso simulador 2
       progress: [
-        //Progreso de Programacion 
+        //Progreso de Programacion
         {
-          values: [
-            [90,10]
-          ],
+          chartName: "Desarrollo",
+          values: [[90, 10]],
           colors: [
-            { 
-              backgroundColor: [this.spectraGreen, 'rgba(0,0,0,0)'],
+            {
+              backgroundColor: [this.spectraGreen, "rgba(0,0,0,0)"],
               borderColor: this.spectraGreen
             }
           ],
-          labels: [
-            "completo",
-            "incompleto"
-          ]
+          labels: ["completo", "incompleto"]
         },
 
         //Progreso de Arte
         {
+          chartName: "Arte",
+          values: [[5, 95]],
+          colors: [
+            {
+              backgroundColor: [this.spectraBlue, "rgba(0,0,0,0)"],
+              borderColor: this.spectraBlue
+            }
+          ],
+          labels: ["completo", "incompleto"]
+        },
+
+        //Progreso Sonido
+        {
+          chartName: "Sonido",
+          values: [[50, 50]],
+          colors: [
+            {
+              backgroundColor: [this.spectraRed, "rgba(0,0,0,0)"],
+              borderColor: this.spectraRed
+            }
+          ],
+          labels: ["completo", "incompleto"]
+        }
+      ],
+      //ANCHOR charts 2
+      charts: {
+        barCharts: [
+          {
+            chartName: "",
+            barLabels: ["Label 1", "Label 2", "Label 3", "Label 4"],
+            barSeries: [
+              {
+                data: [65, 42, 54, 12],
+                label: "Metrica",
+                backgroundColor: this.spectraGreen,
+                hoverBackgroundColor: this.spectraGreen,
+                borderColor: this.spectraGreen
+              }
+            ]
+          }
+        ],
+        doughnutCharts: [
+          {
+            chartName: "",
+            values: [[30, 70]],
+            colors: [
+              {
+                backgroundColor: [this.spectraBlue, "rgba(0,0,0,0)"],
+                borderColor: this.spectraBlue
+              }
+            ],
+            labels: ["completo", "incompleto"]
+          }
+        ],
+        radarCharts: [],
+        pieCharts: [],
+        lineCharts: []
+      }
+    }
+  ];
+
+  constructor() {}
+}
+
+/*
+//ejemplo de barchart
+          {
+            chartName: "",
+            barLabels: ["Label 1", "Label 2", "Label 3", "Label 4"],
+            barSeries: [
+              {
+                data: [65, 42, 54, 12],
+                label: "Metrica",
+                backgroundColor: this.spectraGreen,
+                hoverBackgroundColor: this.spectraGreen,
+                borderColor: this.spectraGreen
+              }
+            ]
+          }
+
+//ejemplo de doughnut
+
+          chartName: "",
           values: [
-            [5,95]
+            [30,70]
           ],
           colors: [
             { 
@@ -337,27 +439,5 @@ export class DashboardComponent implements OnInit {
             "completo",
             "incompleto"
           ]
-        },
 
-        //Progreso Sonido
-        {
-          values: [
-            [50,50]
-          ],
-          colors: [
-            { 
-              backgroundColor: [this.spectraRed, 'rgba(0,0,0,0)'],
-              borderColor: this.spectraRed
-            }
-          ],
-          labels: [
-            "completo",
-            "incompleto"
-          ]
-        }
-      ]
-    }
-  ];
-
-  constructor() {}
-}
+*/

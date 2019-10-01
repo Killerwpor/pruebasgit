@@ -16,7 +16,6 @@ export class ProgressPanelComponent implements OnInit {
   ngOnInit() {
     this.chosenProgress = this.progressCharts[0];
   }
-
   changeProgress(num){
     this.chosenProgress = this.progressCharts[num];
   }

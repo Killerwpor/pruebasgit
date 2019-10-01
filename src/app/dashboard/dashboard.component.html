@@ -98,7 +98,7 @@
             <app-contact-panel [chosen]="selectedContact"> </app-contact-panel>
           </div>
           <div class="col-lg-8 p-0 my-auto">
-            <router-outlet></router-outlet>
+            <app-chart-panel [name]="selectedSimulator.name" [charts] = "selectedSimulator.charts"></app-chart-panel>
           </div>
         </div>
 
@@ -111,9 +111,7 @@
             </app-message-panel>
           </div>
           <div class="col-lg-5 my-auto">
-            <app-progress-panel
-            [progressCharts] = "selectedSimulator.progress"
-            >
+            <app-progress-panel [progressCharts]="selectedSimulator.progress">
             </app-progress-panel>
           </div>
         </div>

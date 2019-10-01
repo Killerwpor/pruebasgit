@@ -1,3 +1,4 @@
+import { doughnutData } from "./../doughnutData";
 import { ChartDataSets } from "chart.js";
 import { Component, OnInit, Input } from "@angular/core";
 import { MultiDataSet, Label } from "ng2-charts";
@@ -11,6 +12,16 @@ export class DoughnutChartComponent implements OnInit {
   public doughnutChartOptions = {
     responsive: true,
     maintainAspectRation: false,
+    legend: {
+      display: false
+    },
+    tooltips: {
+      callbacks: {
+        label: function(tooltipItem) {
+          return tooltipItem.yLabel;
+        }
+      }
+    }
   };
 
   @Input() doughnutChartData: MultiDataSet;
