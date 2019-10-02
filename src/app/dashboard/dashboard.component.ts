@@ -546,38 +546,3 @@ export class DashboardComponent implements OnInit {
 
   constructor() {}
 }
-
-/*
-//ejemplo de barchart
-          {
-            chartName: "",
-            barLabels: ["Label 1", "Label 2", "Label 3", "Label 4"],
-            barSeries: [
-              {
-                data: [65, 42, 54, 12],
-                label: "Metrica",
-                backgroundColor: this.spectraGreen,
-                hoverBackgroundColor: this.spectraGreen,
-                borderColor: this.spectraGreen
-              }
-            ]
-          }
-
-//ejemplo de doughnut
-
-          chartName: "",
-          values: [
-            [30,70]
-          ],
-          colors: [
-            { 
-              backgroundColor: [this.spectraBlue, 'rgba(0,0,0,0)'],
-              borderColor: this.spectraBlue
-            }
-          ],
-          labels: [
-            "completo",
-            "incompleto"
-          ]
-
-*/
