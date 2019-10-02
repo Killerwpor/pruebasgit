@@ -63,5 +63,9 @@ export class BarChartComponent implements OnInit {
 
   constructor() {}
 
+  animateChart(){
+    this.barChartData.slice();
+  }
+
   ngOnInit() {}
 }

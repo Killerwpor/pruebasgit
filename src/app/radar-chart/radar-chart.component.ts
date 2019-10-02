@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { Label } from "ng2-charts";
 import { ChartDataSets, ChartType, RadialChartOptions } from "chart.js";
 
@@ -36,6 +36,9 @@ export class RadarChartComponent implements OnInit {
     }
   };
 
+  
+  /*
+  
   public radarChartLabels: Label[] = [
     "Eating",
     "Drinking",
@@ -56,6 +59,11 @@ export class RadarChartComponent implements OnInit {
       borderColor: "rgba(0, 230, 118,1.0)"
     },
   ];
+  
+  
+  */
+ @Input() radarChartLabels: Label[];
+ @Input() radarChartData: ChartDataSets[];
 
   public radarChartType: ChartType = "radar";
 

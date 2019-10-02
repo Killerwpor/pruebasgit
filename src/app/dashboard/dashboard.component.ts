@@ -1,4 +1,5 @@
 import { barData } from "./../barData";
+import { doughnutData } from "../doughnutData";
 import { ProgressPanelComponent } from "./../progress-panel/progress-panel.component";
 import { ChartPanelComponent } from "./../chart-panel/chart-panel.component";
 import { MessagePanelComponent } from "../message-panel/message-panel.component";
@@ -6,8 +7,6 @@ import { MessagePanelComponent } from "../message-panel/message-panel.component"
 import { contact } from "./../contact";
 import { simulator } from "./../simulator";
 import { Component, OnInit, HostListener, ViewChild } from "@angular/core";
-import { doughnutData } from "../doughnutData";
-
 /* 
   Nota: Dashboard es el componente principal de la pagina, contiene la 
   informacion de los simuladores, incluidos los contactos, mensajes sobre
@@ -41,7 +40,7 @@ export class DashboardComponent implements OnInit {
   //El contacto que ha sido seleccionado
   selectedContact: contact;
 
-  ANCHOR; //colores para las graficas
+  // ANCHOR colores para las graficas
   spectraGreen: string = "#40b987";
   spectraBlue: string = "rgba(0, 229, 255,1.0)";
   spectraRed: string = "rgba(255, 82, 82,1.0)";
@@ -230,12 +229,12 @@ export class DashboardComponent implements OnInit {
       charts: {
         barCharts: [
           {
-            chartName: "barra conduccion",
-            barLabels: ["Label 1", "Label 2", "Label 3", "Label 4"],
+            chartName: "Tiempo en simulador (Bar)",
+            barLabels: ["< 1 minuto", "1-2 minutos", "2-5 minutos", ">5 minutos"],
             barSeries: [
               {
                 data: [65, 42, 54, 12],
-                label: "Metrica",
+                label: "Grupo 1",
                 backgroundColor: this.spectraGreen,
                 hoverBackgroundColor: this.spectraGreen,
                 borderColor: this.spectraGreen
@@ -243,24 +242,103 @@ export class DashboardComponent implements OnInit {
             ]
           },
           {
-            chartName: "barra conduccion 2",
-            barLabels: ["Label 1", "Label 2", "Label 3", "Label 4"],
+            chartName: "Fallas (Bar)",
+            barLabels: ["Choques", "Atropellos", "Giros erroneos", "Infracciones"],
             barSeries: [
               {
-                data: [99, 99, 99, 99],
-                label: "Metrica",
+                data: [150, 102, 104, 154],
+                label: "Grupo 1",
                 backgroundColor: this.spectraGreen,
                 hoverBackgroundColor: this.spectraGreen,
                 borderColor: this.spectraGreen
+              },
+              {
+                data: [35, 65, 12, 52],
+                label: "Grupo 2",
+                backgroundColor: this.spectraBlue,
+                hoverBackgroundColor: this.spectraBlue,
+                borderColor: this.spectraBlue
               }
             ]
           }
         ],
 
-        doughnutCharts: [],
-        radarCharts: [],
-        pieCharts: [],
-        lineCharts: []
+        doughnutCharts: [
+          {
+            chartName: "Satisfaccion (Doughnut)",
+            values: [[30, 70, 60]],
+            colors: [
+              {
+                backgroundColor: [
+                  this.spectraBlue,
+                  this.spectraGreen,
+                  this.spectraRed
+                ],
+                borderColor: [
+                  this.spectraBlue,
+                  this.spectraGreen,
+                  this.spectraRed
+                ]
+              }
+            ],
+            labels: ["completo", "incompleto"]
+          }
+        ],
+
+        radarCharts: [
+          {
+            chartName: "Accidentes (Radar)",
+            radarChartData: [
+              {
+                data: [90, 100, 80, 150, 110],
+                label: "Habitos",
+                backgroundColor: "rgba(0, 230, 118,0.5)",
+                pointBorderColor: "rgba(0, 230, 118,1.0)",
+                pointBackgroundColor: "rgba(0, 230, 118,1.0)",
+                borderColor: "rgba(0, 230, 118,1.0)"
+              }
+            ],
+            radarChartLabels: [
+              "Choques",
+              "Infracciones",
+              "Atropeyos",
+              "Giros erroneos",
+              "Exceso de velocidad"
+            ]
+          }
+        ],
+
+        pieCharts: [
+          {
+            chartName: "Satisfaccion (Pie)",
+            pieChartValues: [40, 20, 25, 15],
+            pieChartLabels: ["Muy Satisfecho", "Satisfecho", "Neutral", "Nada Satisfecho"]
+          }
+        ],
+
+        lineCharts: [
+          {
+            chartName: "metrica de seguridad (Line)",
+            lineChartData: [
+              { data: [65, 59, 80, 81, 56, 55, 40], label: "Series A" },
+              { data: [350, 148, 240, 319, 486, 227, 190], label: "Series B" },
+              {
+                data: [630, 480, 770, 90, 1000, 270, 400],
+                label: "Series C",
+                yAxisID: "y-axis-1"
+              }
+            ],
+            lineChartLabels: [
+              "January",
+              "February",
+              "March",
+              "April",
+              "May",
+              "June",
+              "July"
+            ]
+          }
+        ]
       }
     },
     {
@@ -371,35 +449,97 @@ export class DashboardComponent implements OnInit {
       charts: {
         barCharts: [
           {
-            chartName: "",
-            barLabels: ["Label 1", "Label 2", "Label 3", "Label 4"],
+            chartName: "Puntaje tiempo en cadaveres",
+            barLabels: ["< 1 min", "1 ~ 2 minutos", "2 ~ 5 minutos", ">5 minutos"],
             barSeries: [
               {
-                data: [65, 42, 54, 12],
-                label: "Metrica",
+                data: [3, 14, 24, 17],
+                label: "Grupo 1",
                 backgroundColor: this.spectraGreen,
                 hoverBackgroundColor: this.spectraGreen,
                 borderColor: this.spectraGreen
-              }
+              },
+              {
+                data: [5, 18, 12, 33],
+                label: "Grupo 2",
+                backgroundColor: this.spectraBlue,
+                hoverBackgroundColor: this.spectraBlue,
+                borderColor: this.spectraBlue
+              },
+              {
+                data: [8, 12, 2, 50],
+                label: "Grupo 3z",
+                backgroundColor: this.spectraRed,
+                hoverBackgroundColor: this.spectraRed,
+                borderColor: this.spectraRed
+              },
             ]
-          }
+          },
         ],
         doughnutCharts: [
           {
-            chartName: "",
-            values: [[30, 70]],
+            chartName: "Satisfaccion (Doughnut)",
+            values: [[80, 15, 5]],
             colors: [
               {
-                backgroundColor: [this.spectraBlue, "rgba(0,0,0,0)"],
-                borderColor: this.spectraBlue
+                backgroundColor: [
+                  this.spectraBlue,
+                  this.spectraGreen,
+                  this.spectraRed
+                ],
+                borderColor: [
+                  this.spectraBlue,
+                  this.spectraGreen,
+                  this.spectraRed
+                ]
               }
             ],
             labels: ["completo", "incompleto"]
           }
         ],
-        radarCharts: [],
-        pieCharts: [],
-        lineCharts: []
+        radarCharts: [
+          {
+            chartName: "Causas de fallas (Radar)",
+            radarChartData: [
+              {
+                data: [50, 20, 120, 45],
+                label: "Habitos",
+                backgroundColor: "rgba(0, 230, 118,0.5)",
+                pointBorderColor: "rgba(0, 230, 118,1.0)",
+                pointBackgroundColor: "rgba(0, 230, 118,1.0)",
+                borderColor: "rgba(0, 230, 118,1.0)"
+              }
+            ],
+            radarChartLabels: [
+              "Mala manipulacion",
+              "Tiempo",
+              "Poco cuidado",
+              "Procedimiento incorrecto"
+            ]
+          }
+        ],
+        pieCharts: [
+          {
+            chartName: "Satisfaccion (Pie)",
+            pieChartValues: [60, 5, 5, 30],
+            pieChartLabels: ["Muy Satisfecho", "Satisfecho", "Neutral", "Nada Satisfecho"]
+          }
+        ],
+        lineCharts: [
+          {
+            chartName: "Metrica de cadaveres (Line)",
+            lineChartData: [
+              { data: [500, 541, 120, 78], label: "Avanzados" },
+              { data: [350, 148, 240, 319], label: "Principiantes" },
+            ],
+            lineChartLabels: [
+              "January",
+              "February",
+              "March",
+              "April"
+            ]
+          }
+        ]
       }
     }
   ];

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { ChartDataSets, ChartOptions } from 'chart.js';
 import { Color, BaseChartDirective, Label } from 'ng2-charts';
 
@@ -8,12 +8,9 @@ import { Color, BaseChartDirective, Label } from 'ng2-charts';
   styleUrls: ['./line-chart.component.css']
 })
 export class LineChartComponent implements OnInit {
+  @Input() lineChartData: ChartDataSets[];
+  @Input() lineChartLabels: Label[];
 
-  public lineChartData: ChartDataSets[] = [
-    { data: [18, 8, 77, 50, 100, 130, 180], label: 'Progress' },
-    //{ data: [63, 85, 15, 10, 45, 12, 1], label: 'Not Progress' }
-  ];
-  public lineChartLabels: Label[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
   public lineChartOptions: ChartOptions = {
     responsive: true,
     maintainAspectRatio: true,
@@ -45,9 +42,25 @@ export class LineChartComponent implements OnInit {
     },
   };
   public lineChartColors: Color[] = [
-    { // red
+    { // green
       backgroundColor: 'rgba(64,185,135,0.5) ',
       borderColor: '#40b987',
+      pointBackgroundColor: 'rgba(148,159,177,1)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+    },
+    { // green
+      backgroundColor: 'rgba(0, 229, 255, 0.5) ',
+      borderColor: 'rgba(0, 229, 255, 1.0)',
+      pointBackgroundColor: 'rgba(148,159,177,1)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+    },
+    { // green
+      backgroundColor: 'rgba(255, 82, 82, 0.5) ',
+      borderColor: 'rgba(255, 82, 82, 1.0)',
       pointBackgroundColor: 'rgba(148,159,177,1)',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
@@ -62,5 +75,6 @@ export class LineChartComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 }
