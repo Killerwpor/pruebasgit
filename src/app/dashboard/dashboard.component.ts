@@ -39,7 +39,6 @@ export class DashboardComponent implements OnInit {
   selectedSimulator: simulator;
   //El contacto que ha sido seleccionado
   selectedContact: contact;
-  refresh: boolean = true;
   
 
   // ANCHOR colores para las graficas
@@ -98,6 +97,8 @@ export class DashboardComponent implements OnInit {
     //Cambiar el contacto en la
     this.changeContact(this.selectedSimulator.contacts[0]);
     this.msgPanel.chosenText = this.selectedSimulator.messages[0];
+    
+    //Actualizar el panel de graficas
     if(this.selectedSimulator.charts.lineCharts != null){
       this.chartPanel.chosenChart = this.selectedSimulator.charts.lineCharts[0];
       this.chartPanel.toggle = "line";
@@ -118,6 +119,8 @@ export class DashboardComponent implements OnInit {
       this.chartPanel.chosenChart = this.selectedSimulator.charts.barCharts[0];
       this.chartPanel.toggle = "bar";
     }
+
+    this.progresspanel.chosenProgress = this.selectedSimulator.progress[0];
   }
 
   //Cambiar el contacto para el componente de contact panel
