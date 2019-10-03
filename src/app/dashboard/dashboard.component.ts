@@ -95,7 +95,6 @@ export class DashboardComponent implements OnInit {
     //Cambiar el contacto en la
     this.changeContact(this.selectedSimulator.contacts[0]);
     this.msgPanel.chosenText = this.selectedSimulator.messages[0];
-    this.progresspanel.changeProgress(0);
     this.chartPanel.refreshCharts();
   }
 
@@ -311,7 +310,7 @@ export class DashboardComponent implements OnInit {
         pieCharts: [
           {
             chartName: "Satisfaccion (Pie)",
-            pieChartValues: [40, 20, 25, 15],
+            pieChartValues: [40, 20, 25],
             pieChartLabels: ["Muy Satisfecho", "Satisfecho", "Neutral", "Nada Satisfecho"]
           }
         ],
@@ -518,13 +517,7 @@ export class DashboardComponent implements OnInit {
             ]
           }
         ],
-        pieCharts: [
-          {
-            chartName: "Satisfaccion (Pie)",
-            pieChartValues: [60, 5, 5, 30],
-            pieChartLabels: ["Muy Satisfecho", "Satisfecho", "Neutral", "Nada Satisfecho"]
-          }
-        ],
+        pieCharts: [],
         lineCharts: [
           {
             chartName: "Metrica de cadaveres (Line)",

@@ -15,7 +15,24 @@
   width: 9em;
   height: 9em;
   border-radius: 50%;
-  margin: 20px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center right;
+  object-position: center right;
+  border: 2px solid;
+  border-color: white;
+  background-color: var(--spectra-green);
+  color: white;
+  line-height: 11em;
+}
+
+.image--cover {
+  position: relative;
+  bottom: 1.31em;
+  right: 3px;
+  width: 9em;
+  height: 9em;
+  border-radius: 50%;
   -o-object-fit: cover;
   object-fit: cover;
   -o-object-position: center right;
@@ -29,6 +46,14 @@
 
 .default--cover .i-user {
   font-size: 5em;
+}
+
+input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
 }
 
 .mc-btn-action {

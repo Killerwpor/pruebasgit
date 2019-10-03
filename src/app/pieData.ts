@@ -1,5 +1,5 @@
 export class pieData{
     chartName: string;
-    pieChartValues: number[];
+    pieChartValues;
     pieChartLabels: string[];
 }

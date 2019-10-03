@@ -10,7 +10,7 @@ import { Color, BaseChartDirective, Label } from 'ng2-charts';
 export class LineChartComponent implements OnInit {
   @Input() lineChartData: ChartDataSets[];
   @Input() lineChartLabels: Label[];
-
+  
   public lineChartOptions: ChartOptions = {
     responsive: true,
     maintainAspectRatio: true,
@@ -75,6 +75,5 @@ export class LineChartComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
   }
 }

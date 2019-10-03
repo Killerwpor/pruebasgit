@@ -53,7 +53,7 @@
   </div>
 </div>
 
-<div class="row">
+<div *ngIf="show" class="row">
   <div class="col-lg-12">
     <app-bar-chart
       *ngIf="toggle == 'bar'"

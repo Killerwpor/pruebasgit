@@ -11,6 +11,8 @@ import { Component, OnInit, Input, ViewChild } from "@angular/core";
 export class ChartPanelComponent implements OnInit {
   @Input() name: string;
   @Input() charts;
+  
+  show: boolean = true;
   toggle: string;
 
   chosenChart: any;
@@ -43,10 +45,12 @@ export class ChartPanelComponent implements OnInit {
   }
 
   refreshCharts() {
-    this.chosenChart = this.charts;
+    if(this.charts.lineCharts != null){
+      this.chosenChart = this.charts.lineCharts[0];
+    }
   }
-
+  
   ngOnInit() {
-    this.refreshCharts();
+    this.chosenChart = this.charts;
   }
 }
