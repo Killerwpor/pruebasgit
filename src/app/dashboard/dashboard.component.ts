@@ -39,6 +39,8 @@ export class DashboardComponent implements OnInit {
   selectedSimulator: simulator;
   //El contacto que ha sido seleccionado
   selectedContact: contact;
+  refresh: boolean = true;
+  
 
   // ANCHOR colores para las graficas
   spectraGreen: string = "#40b987";
@@ -88,6 +90,7 @@ export class DashboardComponent implements OnInit {
     this.add = !this.add;
   }
 
+  //ANCHOR cambio de simulador
   //Cambiar el simulador mostrado en el dashboard
   changeSimulator(newSim) {
     //Determinar nuevo simulador
@@ -95,7 +98,26 @@ export class DashboardComponent implements OnInit {
     //Cambiar el contacto en la
     this.changeContact(this.selectedSimulator.contacts[0]);
     this.msgPanel.chosenText = this.selectedSimulator.messages[0];
-    this.chartPanel.refreshCharts();
+    if(this.selectedSimulator.charts.lineCharts != null){
+      this.chartPanel.chosenChart = this.selectedSimulator.charts.lineCharts[0];
+      this.chartPanel.toggle = "line";
+    }
+    if(this.selectedSimulator.charts.pieCharts != null){
+      this.chartPanel.chosenChart = this.selectedSimulator.charts.pieCharts[0];
+      this.chartPanel.toggle = "pie";
+    }
+    if(this.selectedSimulator.charts.radarCharts != null){
+      this.chartPanel.chosenChart = this.selectedSimulator.charts.radarCharts[0];
+      this.chartPanel.toggle = "radar";
+    }
+    if(this.selectedSimulator.charts.doughnutCharts != null){
+      this.chartPanel.chosenChart = this.selectedSimulator.charts.doughnutCharts[0];
+      this.chartPanel.toggle = "doughnut";
+    }
+    if(this.selectedSimulator.charts.barCharts != null){
+      this.chartPanel.chosenChart = this.selectedSimulator.charts.barCharts[0];
+      this.chartPanel.toggle = "bar";
+    }
   }
 
   //Cambiar el contacto para el componente de contact panel
@@ -467,7 +489,7 @@ export class DashboardComponent implements OnInit {
               },
               {
                 data: [8, 12, 2, 50],
-                label: "Grupo 3z",
+                label: "Grupo 3",
                 backgroundColor: this.spectraRed,
                 hoverBackgroundColor: this.spectraRed,
                 borderColor: this.spectraRed
