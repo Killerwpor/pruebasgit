@@ -11,7 +11,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --aot --prod"
   },
   "private": true,
   "dependencies": {
@@ -40,6 +41,7 @@
     "ng-bootstrap": "^1.6.3",
     "ng-sidebar": "^9.1.1",
     "ng2-charts": "^2.3.0",
+    "path": "^0.12.7",
     "popper.js": "^1.12.3",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
