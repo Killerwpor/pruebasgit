@@ -8,6 +8,8 @@ import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { SidebarModule } from 'ng-sidebar';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 import { ChartsModule } from 'ng2-charts';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -27,6 +29,7 @@ import { LoginComponent } from './login/login.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { SimulatorFormComponent } from './simulator-form/simulator-form.component';
 import { ProgressPanelComponent } from './progress-panel/progress-panel.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -59,7 +62,9 @@ import { ProgressPanelComponent } from './progress-panel/progress-panel.componen
     NgbModule,
     AngularFontAwesomeModule,
     SidebarModule.forRoot(),
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

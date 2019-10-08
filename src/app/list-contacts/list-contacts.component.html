@@ -1,6 +1,6 @@
 <div class="container-flex">
   <div class="container container-list">
-    <div class="row row-simulator" *ngFor="let contact of contacts">
+    <div class="row row-simulator" *ngFor="let contact of contacts | filter: filterContact">
       <div class="col-lg-12" (click)="selectContact(contact)">
         <div class="container-button">
           <img

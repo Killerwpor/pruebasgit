@@ -1,6 +1,7 @@
 import { BarChartComponent } from "./../bar-chart/bar-chart.component";
 import { barData } from "./../barData";
 import { chartsData } from "./../chartsData";
+import { faCoffee, faSkull, faPizzaSlice, faCar, faBicycle, faHamburger, faMountain } from '@fortawesome/free-solid-svg-icons';
 import { Component, OnInit, Input, ViewChild } from "@angular/core";
 
 @Component({
@@ -9,8 +10,19 @@ import { Component, OnInit, Input, ViewChild } from "@angular/core";
   styleUrls: ["./chart-panel.component.css"]
 })
 export class ChartPanelComponent implements OnInit {
+
+  // Variables for icons 
+  faCoffee = faCoffee;
+  faSkull = faSkull;
+  faBurger = faHamburger;
+  faPizza = faPizzaSlice;
+  faBike = faBicycle;
+  faCar = faCar;
+  faMountain = faMountain;
+
   @Input() name: string;
   @Input() charts;
+  @Input() icon: string;
   
   show: boolean = true;
   toggle: string;

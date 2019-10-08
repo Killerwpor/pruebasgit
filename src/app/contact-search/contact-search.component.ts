@@ -12,6 +12,14 @@ export class ContactSearchComponent implements OnInit {
 
   //Activar la la funcion de agreggar usuario
   @Output() addUser: EventEmitter<any> = new EventEmitter();
+  @Output() userFilter: EventEmitter<any> = new EventEmitter();
+  searchText: string; 
+
+  lookUser(){
+    this.userFilter.emit(this.searchText);
+  }
+  
+
   openUserForm(){
     this.addUser.emit(null);
   }

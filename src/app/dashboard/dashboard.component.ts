@@ -39,6 +39,8 @@ export class DashboardComponent implements OnInit {
   selectedSimulator: simulator;
   //El contacto que ha sido seleccionado
   selectedContact: contact;
+  //El filtro aplicado a la lista de contactos
+  filteredContact: string;
   
 
   // ANCHOR colores para las graficas
@@ -126,6 +128,12 @@ export class DashboardComponent implements OnInit {
   //Cambiar el contacto para el componente de contact panel
   changeContact(newCon) {
     this.selectedContact = newCon;
+  }
+
+  //Filtrar la lista de contactos por el nombre que se busque 
+  filterContact(filtered){
+    this.filteredContact = filtered;
+    console.log(this.filteredContact);
   }
 
   // Lista de todos los datos de los simuladores

@@ -10,6 +10,7 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 export class ListContactsComponent implements OnInit {
 
   @Input() contacts;
+  @Input() filterContact;
   @Output() chooseContact = new EventEmitter<contact>();
 
   selectContact(contact){

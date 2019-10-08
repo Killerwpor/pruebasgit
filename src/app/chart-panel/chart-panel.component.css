@@ -17,6 +17,11 @@
   background-color: var(--spectra-green);
 }
 
+.image--cover fa-icon{
+  color: white;
+  font-size: 1em;
+}
+
 .col-simulator {
   padding: 0;
 }

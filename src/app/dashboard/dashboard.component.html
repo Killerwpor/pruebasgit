@@ -2,10 +2,8 @@
   <div class="row">
     <div class="row w-100 row-nav">
       <div class="col-lg-12 p-0">
-        <app-navbar
-          (open)="onOpen($event)"
-          (close)="onClose($event)"
-        ></app-navbar>
+        <app-navbar (open)="onOpen($event)" (close)="onClose($event)">
+        </app-navbar>
       </div>
     </div>
 
@@ -73,6 +71,7 @@
           <div class="col-lg-12 p-0">
             <app-contact-search
               (addUser)="addUser($event)"
+              (userFilter)="filterContact($event)"
             ></app-contact-search>
           </div>
         </div>
@@ -82,6 +81,7 @@
             <app-list-contacts
               [contacts]="selectedSimulator.contacts"
               (chooseContact)="changeContact($event)"
+              [filterContact]="filteredContact"
             >
             </app-list-contacts>
           </div>
@@ -98,7 +98,11 @@
             <app-contact-panel [chosen]="selectedContact"> </app-contact-panel>
           </div>
           <div class="col-lg-8 p-0 my-auto">
-            <app-chart-panel [name]="selectedSimulator.name" [charts] = "selectedSimulator.charts"></app-chart-panel>
+            <app-chart-panel
+              [name]="selectedSimulator.name"
+              [charts]="selectedSimulator.charts"
+              [icon]="selectedSimulator.icon"
+            ></app-chart-panel>
           </div>
         </div>
 
