@@ -9,6 +9,7 @@ import * as $ from "jquery";
   templateUrl: "./navbar.component.html",
   styleUrls: ["./navbar.component.css"]
 })
+
 export class NavbarComponent implements OnInit {
   constructor(private modalService: NgbModal) {}
 
@@ -29,8 +30,8 @@ export class NavbarComponent implements OnInit {
   }
 
   // sidebar
-  private _opened: boolean = false;
-  private _toggleSidebar() {
+  public  _opened: boolean = false;
+  public _toggleSidebar() {
     this._opened = !this._opened;
   }
   
