@@ -1,0 +1,100 @@
+<div class="row">
+  <div class="col-lg-1 my-auto col-simulator">
+    <i class="fa fa-caret-right caret-simulator" aria-hidden="true"></i>
+  </div>
+  <div class="col-lg-1 my-auto">
+    <div class="image--cover">
+      <div class="row h-100">
+        <div class="col-lg-12 my-auto">
+            <fa-icon
+            *ngIf="icon=='car'"
+            [icon]="faCar"
+          ></fa-icon>
+          <fa-icon
+            *ngIf="icon=='skull'"
+            [icon]="faSkull"
+          ></fa-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 tex my-auto col-name-simulator">
+    <h5>{{ name }}</h5>
+  </div>
+  <div class="col-lg-5 tex my-auto">
+    <h5>{{ chosenChart.chartName }}</h5>
+  </div>
+  <div class="col-lg-2 my-auto">
+    <div ngbDropdown class="d-inline-block">
+      <button
+        class="btn btn-outline-primary"
+        id="dropdowncharts"
+        ngbDropdownToggle
+      >
+        Charts
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dropdowncharts">
+        <div *ngFor="let bar of charts.barCharts; let i = index">
+          <button ngbDropdownItem (click)="loadChart('bar', i)">
+            {{ bar.chartName }}
+          </button>
+        </div>
+        <div *ngFor="let doughnut of charts.doughnutCharts; let i = index">
+          <button ngbDropdownItem (click)="loadChart('doughnut', i)">
+            {{ doughnut.chartName }}
+          </button>
+        </div>
+        <div *ngFor="let radar of charts.radarCharts; let i = index">
+          <button ngbDropdownItem (click)="loadChart('radar', i)">
+            {{ radar.chartName }}
+          </button>
+        </div>
+        <div *ngFor="let pie of charts.pieCharts; let i = index">
+          <button ngbDropdownItem (click)="loadChart('pie', i)">
+            {{ pie.chartName }}
+          </button>
+        </div>
+        <div *ngFor="let line of charts.lineCharts; let i = index">
+          <button ngbDropdownItem (click)="loadChart('line', i)">
+            {{ line.chartName }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="show" class="row">
+  <div class="col-lg-12">
+    <app-bar-chart
+      *ngIf="toggle == 'bar'"
+      [barChartLabels]="chosenChart.barLabels"
+      [barChartData]="chosenChart.barSeries"
+    >
+    </app-bar-chart>
+    <app-doughnut-chart
+      *ngIf="toggle == 'doughnut'"
+      [doughnutChartData]="chosenChart.values"
+      [doughnutColors]="chosenChart.colors"
+      [doughnutChartLabels]="chosenChart.labels"
+    >
+    </app-doughnut-chart>
+    <app-radar-chart
+      *ngIf="toggle == 'radar'"
+      [radarChartData]="chosenChart.radarChartData"
+      [radarChartLabels]="chosenChart.radarChartLabels"
+    ></app-radar-chart>
+    <app-pie-chart
+      *ngIf="toggle == 'pie'"
+      [pieChartData]="chosenChart.pieChartValues"
+      [pieChartLabels]="chosenChart.pieChartLabels"
+    >
+    </app-pie-chart>
+    <app-line-chart
+      *ngIf="toggle == 'line'"
+      [lineChartData]="chosenChart.lineChartData"
+      [lineChartLabels]="chosenChart.lineChartLabels"
+    >
+    </app-line-chart>
+  </div>
+</div>
