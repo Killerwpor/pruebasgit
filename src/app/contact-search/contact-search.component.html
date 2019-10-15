@@ -6,7 +6,7 @@
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">
-                <i class="fa fa-search" aria-hidden="true" (click)="lookUser()"></i>
+                <i class="fa fa-search" aria-hidden="true"></i>
               </span>
             </div>
             <input
@@ -16,6 +16,7 @@
               aria-label=""
               aria-describedby="basic-addon1"
               [(ngModel)]="searchText"
+              (ngModelChange) = "lookUser()"
               type="text" 
               name="search"
             />

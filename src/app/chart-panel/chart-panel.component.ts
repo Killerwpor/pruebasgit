@@ -3,6 +3,14 @@ import { barData } from "./../barData";
 import { chartsData } from "./../chartsData";
 import { faCoffee, faSkull, faPizzaSlice, faCar, faBicycle, faHamburger, faMountain } from '@fortawesome/free-solid-svg-icons';
 import { Component, OnInit, Input, ViewChild } from "@angular/core";
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from "@angular/animations";
+
 
 @Component({
   selector: "app-chart-panel",

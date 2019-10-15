@@ -41,7 +41,6 @@ export class DashboardComponent implements OnInit {
   selectedContact: contact;
   //El filtro aplicado a la lista de contactos
   filteredContact: string;
-  
 
   // ANCHOR colores para las graficas
   spectraGreen: string = "#40b987";
@@ -99,25 +98,25 @@ export class DashboardComponent implements OnInit {
     //Cambiar el contacto en la
     this.changeContact(this.selectedSimulator.contacts[0]);
     this.msgPanel.chosenText = this.selectedSimulator.messages[0];
-    
+
     //Actualizar el panel de graficas
-    if(this.selectedSimulator.charts.lineCharts != null){
+    if (this.selectedSimulator.charts.lineCharts != null) {
       this.chartPanel.chosenChart = this.selectedSimulator.charts.lineCharts[0];
       this.chartPanel.toggle = "line";
     }
-    if(this.selectedSimulator.charts.pieCharts != null){
+    if (this.selectedSimulator.charts.pieCharts != null) {
       this.chartPanel.chosenChart = this.selectedSimulator.charts.pieCharts[0];
       this.chartPanel.toggle = "pie";
     }
-    if(this.selectedSimulator.charts.radarCharts != null){
+    if (this.selectedSimulator.charts.radarCharts != null) {
       this.chartPanel.chosenChart = this.selectedSimulator.charts.radarCharts[0];
       this.chartPanel.toggle = "radar";
     }
-    if(this.selectedSimulator.charts.doughnutCharts != null){
+    if (this.selectedSimulator.charts.doughnutCharts != null) {
       this.chartPanel.chosenChart = this.selectedSimulator.charts.doughnutCharts[0];
       this.chartPanel.toggle = "doughnut";
     }
-    if(this.selectedSimulator.charts.barCharts != null){
+    if (this.selectedSimulator.charts.barCharts != null) {
       this.chartPanel.chosenChart = this.selectedSimulator.charts.barCharts[0];
       this.chartPanel.toggle = "bar";
     }
@@ -130,8 +129,8 @@ export class DashboardComponent implements OnInit {
     this.selectedContact = newCon;
   }
 
-  //Filtrar la lista de contactos por el nombre que se busque 
-  filterContact(filtered){
+  //Filtrar la lista de contactos por el nombre que se busque
+  filterContact(filtered) {
     this.filteredContact = filtered;
     console.log(this.filteredContact);
   }
@@ -158,60 +157,6 @@ export class DashboardComponent implements OnInit {
           company: "Dreamhouse Studios",
           job: "Vice-president"
         },
-        {
-          name: "Solid Snake",
-          id: "???????",
-          photoUrl: "assets/img/testing/snake.jpg",
-          mail: "snake@foxhound.com",
-          phone: "*************",
-          company: "Foxhound",
-          job: "Spy/Soldier"
-        },
-        {
-          name: "Cloud Strife",
-          id: "strifecloud",
-          photoUrl: "assets/img/testing/cloud.jpg",
-          mail: "cloud.strife@soldier.com",
-          phone: "777-7777-777",
-          company: "Shinra Electrical Company",
-          job: "Soldier 1st class"
-        },
-        {
-          name: "Mario",
-          id: "mushroomMario",
-          photoUrl: "assets/img/testing/mario.png",
-          mail: "mario@mushroom.com",
-          phone: "354-6357-721",
-          company: "Mushroom Kingdom",
-          job: "Plumber"
-        },
-        {
-          name: "Bowser",
-          id: "badBowser",
-          photoUrl: "assets/img/testing/bowser.png",
-          mail: "bowser@evil.com",
-          phone: "666-6666-666",
-          company: "Koopa Kingdom",
-          job: "King"
-        },
-        {
-          name: "Monkey D. Luffy",
-          id: "pirateKingLuffy",
-          photoUrl: "assets/img/testing/luffy.jpg",
-          mail: "luffy@strawhats.com",
-          phone: "843-7157-364",
-          company: "Strawhat Pirates",
-          job: "Captain"
-        },
-        {
-          name: "Goku",
-          id: "kakarotGoku",
-          photoUrl: "assets/img/testing/goku.png",
-          mail: "goku@capsulecorp.com",
-          phone: "743-6481-782",
-          company: "Capsule Corporation",
-          job: "Fighter"
-        }
       ],
       messages: [
         "Se termino un modulo de conduccion\nSe hizo la prueba de el mareo de las personas\nSe decidio hacer los carros de colores brillantes",
@@ -262,7 +207,12 @@ export class DashboardComponent implements OnInit {
         barCharts: [
           {
             chartName: "Tiempo en simulador (Bar)",
-            barLabels: ["< 1 minuto", "1-2 minutos", "2-5 minutos", ">5 minutos"],
+            barLabels: [
+              "< 1 minuto",
+              "1-2 minutos",
+              "2-5 minutos",
+              ">5 minutos"
+            ],
             barSeries: [
               {
                 data: [65, 42, 54, 12],
@@ -275,7 +225,12 @@ export class DashboardComponent implements OnInit {
           },
           {
             chartName: "Fallas (Bar)",
-            barLabels: ["Choques", "Atropellos", "Giros erroneos", "Infracciones"],
+            barLabels: [
+              "Choques",
+              "Atropellos",
+              "Giros erroneos",
+              "Infracciones"
+            ],
             barSeries: [
               {
                 data: [150, 102, 104, 154],
@@ -344,7 +299,12 @@ export class DashboardComponent implements OnInit {
           {
             chartName: "Satisfaccion (Pie)",
             pieChartValues: [40, 20, 25],
-            pieChartLabels: ["Muy Satisfecho", "Satisfecho", "Neutral", "Nada Satisfecho"]
+            pieChartLabels: [
+              "Muy Satisfecho",
+              "Satisfecho",
+              "Neutral",
+              "Nada Satisfecho"
+            ]
           }
         ],
 
@@ -372,7 +332,9 @@ export class DashboardComponent implements OnInit {
           }
         ]
       }
-    },
+    }
+    /*
+    
     {
       name: "Cadaveres",
       icon: "skull",
@@ -380,7 +342,7 @@ export class DashboardComponent implements OnInit {
         {
           name: "Luke Skywalker",
           id: "jediLuke",
-          photoUrl: "assets/img/testing/luke.jpg",
+          photoUrl: "assets/img/testing/man.jpg",
           mail: "luke@jedi.com",
           phone: "354-4987-721",
           company: "Rebel Alliance",
@@ -389,7 +351,7 @@ export class DashboardComponent implements OnInit {
         {
           name: "Vlad Dracula Tepes",
           id: "vampDracula",
-          photoUrl: "assets/img/testing/dracula.jpg",
+          photoUrl: "assets/img/testing/woman.jpg",
           mail: "dracula@evil.com",
           phone: "666-6666-666",
           company: "Hungary hotels",
@@ -398,7 +360,7 @@ export class DashboardComponent implements OnInit {
         {
           name: "Dante",
           id: "pizzaDante",
-          photoUrl: "assets/img/testing/dante.jpg",
+          photoUrl: "assets/img/testing/woman.jpg",
           mail: "dante@dmc.com",
           phone: "666-6666-666",
           company: "Devil May Cry",
@@ -407,7 +369,7 @@ export class DashboardComponent implements OnInit {
         {
           name: "Jack Sparrow",
           id: "rumJack",
-          photoUrl: "assets/img/testing/jack.jpg",
+          photoUrl: "assets/img/testing/man.jpg",
           mail: "jacksparrow@pirates.com",
           phone: "743-6481-782",
           company: "Black Pearl Pirates",
@@ -416,7 +378,7 @@ export class DashboardComponent implements OnInit {
         {
           name: "Bender Rodriguez",
           id: "metalBender",
-          photoUrl: "assets/img/testing/bender.jpg",
+          photoUrl: "assets/img/testing/woman.jpg",
           mail: "bender@planetexpress.com",
           phone: "964-6969-852",
           company: "Planet Express",
@@ -425,7 +387,7 @@ export class DashboardComponent implements OnInit {
         {
           name: "Homer J. Simpson",
           id: "dohHomer",
-          photoUrl: "assets/img/testing/homer.jpg",
+          photoUrl: "assets/img/testing/man.jpg",
           mail: "homer@simpson.com",
           phone: "568-9842-774",
           company: "Springfield Nuclear Plant",
@@ -482,7 +444,12 @@ export class DashboardComponent implements OnInit {
         barCharts: [
           {
             chartName: "Puntaje tiempo en cadaveres",
-            barLabels: ["< 1 min", "1 ~ 2 minutos", "2 ~ 5 minutos", ">5 minutos"],
+            barLabels: [
+              "< 1 min",
+              "1 ~ 2 minutos",
+              "2 ~ 5 minutos",
+              ">5 minutos"
+            ],
             barSeries: [
               {
                 data: [3, 14, 24, 17],
@@ -504,9 +471,9 @@ export class DashboardComponent implements OnInit {
                 backgroundColor: this.spectraRed,
                 hoverBackgroundColor: this.spectraRed,
                 borderColor: this.spectraRed
-              },
+              }
             ]
-          },
+          }
         ],
         doughnutCharts: [
           {
@@ -556,18 +523,14 @@ export class DashboardComponent implements OnInit {
             chartName: "Metrica de cadaveres (Line)",
             lineChartData: [
               { data: [500, 541, 120, 78], label: "Avanzados" },
-              { data: [350, 148, 240, 319], label: "Principiantes" },
+              { data: [350, 148, 240, 319], label: "Principiantes" }
             ],
-            lineChartLabels: [
-              "January",
-              "February",
-              "March",
-              "April"
-            ]
+            lineChartLabels: ["January", "February", "March", "April"]
           }
         ]
       }
     }
+    */
   ];
 
   constructor() {}
