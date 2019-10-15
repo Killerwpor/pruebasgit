@@ -100,8 +100,8 @@
           <div class="col-lg-8 p-0 my-auto">
             <app-chart-panel
               [name]="selectedSimulator.name"
-              [charts]="selectedSimulator.charts"
-              [icon]="selectedSimulator.icon"
+              [charts]="selectedContact.charts"
+              [icon]="selectedContact.icon"
             ></app-chart-panel>
           </div>
         </div>
@@ -111,7 +111,7 @@
         <!--Parte inferior del dash-->
         <div class="row w-100 row-dash-lower">
           <div class="col-lg-7 my-auto">
-            <app-message-panel [simulatorTexts]="selectedSimulator.messages">
+            <app-message-panel [simulatorTexts]="selectedContact.messages">
             </app-message-panel>
           </div>
           <div class="col-lg-5 my-auto">

@@ -7,7 +7,5 @@ export class simulator{
     name: string;
     icon: string;
     contacts: contact[];
-    messages: string[];
     progress: doughnutData[];
-    charts: chartsData;
 }

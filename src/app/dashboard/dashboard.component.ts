@@ -97,29 +97,9 @@ export class DashboardComponent implements OnInit {
     this.selectedSimulator = newSim;
     //Cambiar el contacto en la
     this.changeContact(this.selectedSimulator.contacts[0]);
-    this.msgPanel.chosenText = this.selectedSimulator.messages[0];
+    this.msgPanel.chosenText = this.selectedContact.messages[0];
 
-    //Actualizar el panel de graficas
-    if (this.selectedSimulator.charts.lineCharts != null) {
-      this.chartPanel.chosenChart = this.selectedSimulator.charts.lineCharts[0];
-      this.chartPanel.toggle = "line";
-    }
-    if (this.selectedSimulator.charts.pieCharts != null) {
-      this.chartPanel.chosenChart = this.selectedSimulator.charts.pieCharts[0];
-      this.chartPanel.toggle = "pie";
-    }
-    if (this.selectedSimulator.charts.radarCharts != null) {
-      this.chartPanel.chosenChart = this.selectedSimulator.charts.radarCharts[0];
-      this.chartPanel.toggle = "radar";
-    }
-    if (this.selectedSimulator.charts.doughnutCharts != null) {
-      this.chartPanel.chosenChart = this.selectedSimulator.charts.doughnutCharts[0];
-      this.chartPanel.toggle = "doughnut";
-    }
-    if (this.selectedSimulator.charts.barCharts != null) {
-      this.chartPanel.chosenChart = this.selectedSimulator.charts.barCharts[0];
-      this.chartPanel.toggle = "bar";
-    }
+    
 
     this.progresspanel.chosenProgress = this.selectedSimulator.progress[0];
   }
@@ -127,6 +107,29 @@ export class DashboardComponent implements OnInit {
   //Cambiar el contacto para el componente de contact panel
   changeContact(newCon) {
     this.selectedContact = newCon;
+    this.msgPanel.chosenText = this.selectedContact.messages[0];
+
+    //Actualizar el panel de graficas
+    if (this.selectedContact.charts.lineCharts != null) {
+      this.chartPanel.chosenChart = this.selectedContact.charts.lineCharts[0];
+      this.chartPanel.toggle = "line";
+    }
+    if (this.selectedContact.charts.pieCharts != null) {
+      this.chartPanel.chosenChart = this.selectedContact.charts.pieCharts[0];
+      this.chartPanel.toggle = "pie";
+    }
+    if (this.selectedContact.charts.radarCharts != null) {
+      this.chartPanel.chosenChart = this.selectedContact.charts.radarCharts[0];
+      this.chartPanel.toggle = "radar";
+    }
+    if (this.selectedContact.charts.doughnutCharts != null) {
+      this.chartPanel.chosenChart = this.selectedContact.charts.doughnutCharts[0];
+      this.chartPanel.toggle = "doughnut";
+    }
+    if (this.selectedContact.charts.barCharts != null) {
+      this.chartPanel.chosenChart = this.selectedContact.charts.barCharts[0];
+      this.chartPanel.toggle = "bar";
+    }
   }
 
   //Filtrar la lista de contactos por el nombre que se busque
@@ -147,21 +150,6 @@ export class DashboardComponent implements OnInit {
     {
       name: "Seguridad",
       icon: "car",
-      contacts: [
-        {
-          name: "Orion",
-          id: "GoodboiOrion",
-          photoUrl: "assets/img/testing/orion.jpg",
-          mail: "orion@dreamhousedtudios.com",
-          phone: "3206115544",
-          company: "Dreamhouse Studios",
-          job: "Vice-president"
-        },
-      ],
-      messages: [
-        "Se termino un modulo de conduccion\nSe hizo la prueba de el mareo de las personas\nSe decidio hacer los carros de colores brillantes",
-        "Las personas experimentan mareo al usar el simulador\nHubo un bug en una interseccion\nLos semaforos no funcionaron"
-      ],
       progress: [
         //Progreso de Programacion
         {
@@ -202,136 +190,296 @@ export class DashboardComponent implements OnInit {
           labels: ["completo", "incompleto"]
         }
       ],
-      //ANCHOR charts 1
-      charts: {
-        barCharts: [
-          {
-            chartName: "Tiempo en simulador (Bar)",
-            barLabels: [
-              "< 1 minuto",
-              "1-2 minutos",
-              "2-5 minutos",
-              ">5 minutos"
-            ],
-            barSeries: [
+      contacts: [
+        //ANCHOR Orion
+        {
+          name: "Orion",
+          id: "GoodboiOrion",
+          photoUrl: "assets/img/testing/orion.jpg",
+          mail: "orion@dreamhousedtudios.com",
+          phone: "3206115544",
+          company: "Dreamhouse Studios",
+          job: "Vice-president",
+          messages: [
+            "Orion es un buen perro\nMe trajo la pelota cuando se la pedi\nOrion se unio a la plataforma",
+            "Orion saco 100 puntos en la prueba\nLo hizo muy bien\nOrion empezo a hacer las pruebas"
+          ],
+          //ANCHOR charts 1
+          charts: {
+            barCharts: [
               {
-                data: [65, 42, 54, 12],
-                label: "Grupo 1",
-                backgroundColor: this.spectraGreen,
-                hoverBackgroundColor: this.spectraGreen,
-                borderColor: this.spectraGreen
-              }
-            ]
-          },
-          {
-            chartName: "Fallas (Bar)",
-            barLabels: [
-              "Choques",
-              "Atropellos",
-              "Giros erroneos",
-              "Infracciones"
-            ],
-            barSeries: [
-              {
-                data: [150, 102, 104, 154],
-                label: "Grupo 1",
-                backgroundColor: this.spectraGreen,
-                hoverBackgroundColor: this.spectraGreen,
-                borderColor: this.spectraGreen
+                chartName: "Tiempo en simulador (Bar)",
+                barLabels: [
+                  "< 1 minuto",
+                  "1-2 minutos",
+                  "2-5 minutos",
+                  ">5 minutos"
+                ],
+                barSeries: [
+                  {
+                    data: [65, 42, 54, 12],
+                    label: "Grupo 1",
+                    backgroundColor: this.spectraGreen,
+                    hoverBackgroundColor: this.spectraGreen,
+                    borderColor: this.spectraGreen
+                  }
+                ]
               },
               {
-                data: [35, 65, 12, 52],
-                label: "Grupo 2",
-                backgroundColor: this.spectraBlue,
-                hoverBackgroundColor: this.spectraBlue,
-                borderColor: this.spectraBlue
-              }
-            ]
-          }
-        ],
-
-        doughnutCharts: [
-          {
-            chartName: "Satisfaccion (Doughnut)",
-            values: [[30, 70, 60]],
-            colors: [
-              {
-                backgroundColor: [
-                  this.spectraBlue,
-                  this.spectraGreen,
-                  this.spectraRed
+                chartName: "Fallas (Bar)",
+                barLabels: [
+                  "Choques",
+                  "Atropellos",
+                  "Giros erroneos",
+                  "Infracciones"
                 ],
-                borderColor: [
-                  this.spectraBlue,
-                  this.spectraGreen,
-                  this.spectraRed
+                barSeries: [
+                  {
+                    data: [150, 102, 104, 154],
+                    label: "Grupo 1",
+                    backgroundColor: this.spectraGreen,
+                    hoverBackgroundColor: this.spectraGreen,
+                    borderColor: this.spectraGreen
+                  },
+                  {
+                    data: [35, 65, 12, 52],
+                    label: "Grupo 2",
+                    backgroundColor: this.spectraBlue,
+                    hoverBackgroundColor: this.spectraBlue,
+                    borderColor: this.spectraBlue
+                  }
                 ]
               }
             ],
-            labels: ["completo", "incompleto"]
-          }
-        ],
-
-        radarCharts: [
-          {
-            chartName: "Accidentes (Radar)",
-            radarChartData: [
+    
+            doughnutCharts: [
               {
-                data: [90, 100, 80, 150, 110],
-                label: "Habitos",
-                backgroundColor: "rgba(0, 230, 118,0.5)",
-                pointBorderColor: "rgba(0, 230, 118,1.0)",
-                pointBackgroundColor: "rgba(0, 230, 118,1.0)",
-                borderColor: "rgba(0, 230, 118,1.0)"
+                chartName: "Satisfaccion (Doughnut)",
+                values: [[30, 70, 60]],
+                colors: [
+                  {
+                    backgroundColor: [
+                      this.spectraBlue,
+                      this.spectraGreen,
+                      this.spectraRed
+                    ],
+                    borderColor: [
+                      this.spectraBlue,
+                      this.spectraGreen,
+                      this.spectraRed
+                    ]
+                  }
+                ],
+                labels: ["completo", "incompleto"]
               }
             ],
-            radarChartLabels: [
-              "Choques",
-              "Infracciones",
-              "Atropeyos",
-              "Giros erroneos",
-              "Exceso de velocidad"
-            ]
-          }
-        ],
-
-        pieCharts: [
-          {
-            chartName: "Satisfaccion (Pie)",
-            pieChartValues: [40, 20, 25],
-            pieChartLabels: [
-              "Muy Satisfecho",
-              "Satisfecho",
-              "Neutral",
-              "Nada Satisfecho"
-            ]
-          }
-        ],
-
-        lineCharts: [
-          {
-            chartName: "metrica de seguridad (Line)",
-            lineChartData: [
-              { data: [65, 59, 80, 81, 56, 55, 40], label: "Series A" },
-              { data: [350, 148, 240, 319, 486, 227, 190], label: "Series B" },
+    
+            radarCharts: [
               {
-                data: [630, 480, 770, 90, 1000, 270, 400],
-                label: "Series C",
-                yAxisID: "y-axis-1"
+                chartName: "Accidentes (Radar)",
+                radarChartData: [
+                  {
+                    data: [90, 100, 80, 150, 110],
+                    label: "Habitos",
+                    backgroundColor: "rgba(0, 230, 118,0.5)",
+                    pointBorderColor: "rgba(0, 230, 118,1.0)",
+                    pointBackgroundColor: "rgba(0, 230, 118,1.0)",
+                    borderColor: "rgba(0, 230, 118,1.0)"
+                  }
+                ],
+                radarChartLabels: [
+                  "Choques",
+                  "Infracciones",
+                  "Atropeyos",
+                  "Giros erroneos",
+                  "Exceso de velocidad"
+                ]
               }
             ],
-            lineChartLabels: [
-              "January",
-              "February",
-              "March",
-              "April",
-              "May",
-              "June",
-              "July"
+    
+            pieCharts: [
+              {
+                chartName: "Satisfaccion (Pie)",
+                pieChartValues: [40, 20, 25],
+                pieChartLabels: [
+                  "Muy Satisfecho",
+                  "Satisfecho",
+                  "Neutral",
+                  "Nada Satisfecho"
+                ]
+              }
+            ],
+    
+            lineCharts: [
+              {
+                chartName: "metrica de seguridad (Line)",
+                lineChartData: [
+                  { data: [65, 59, 80, 81, 56, 55, 40], label: "Series A" },
+                  { data: [350, 148, 240, 319, 486, 227, 190], label: "Series B" },
+                  {
+                    data: [630, 480, 770, 90, 1000, 270, 400],
+                    label: "Series C",
+                    yAxisID: "y-axis-1"
+                  }
+                ],
+                lineChartLabels: [
+                  "January",
+                  "February",
+                  "March",
+                  "April",
+                  "May",
+                  "June",
+                  "July"
+                ]
+              }
             ]
           }
-        ]
-      }
+        },
+        //ANCHOR Driver 1
+        {
+          name: "Driver 1",
+          id: "driver1Waygroup",
+          photoUrl: "assets/img/testing/man.jpg",
+          mail: "driver1@waygroup.com",
+          phone: "312-2589-951",
+          company: "Waygroup",
+          job: "Student",
+          messages: [
+            "El conductor lo hizo bien\nEL conductor fallo la prueba\nEl conductor comenzo el simulador",
+            "El conductor tiende a chocar mucho\nEl conductor atropeyo 3 transeuntes\nEl conductor no es agradable"
+          ],
+          //ANCHOR charts 1
+          charts: {
+            barCharts: [
+              {
+                chartName: "Tiempo en simulador (Bar)",
+                barLabels: [
+                  "< 1 minuto",
+                  "1-2 minutos",
+                  "2-5 minutos",
+                  ">5 minutos"
+                ],
+                barSeries: [
+                  {
+                    data: [12, 12, 12, 12],
+                    label: "Grupo 1",
+                    backgroundColor: this.spectraGreen,
+                    hoverBackgroundColor: this.spectraGreen,
+                    borderColor: this.spectraGreen
+                  }
+                ]
+              },
+              {
+                chartName: "Fallas (Bar)",
+                barLabels: [
+                  "Choques",
+                  "Atropellos",
+                  "Giros erroneos",
+                  "Infracciones"
+                ],
+                barSeries: [
+                  {
+                    data: [150, 102, 104, 154],
+                    label: "Grupo 1",
+                    backgroundColor: this.spectraGreen,
+                    hoverBackgroundColor: this.spectraGreen,
+                    borderColor: this.spectraGreen
+                  },
+                  {
+                    data: [35, 65, 12, 52],
+                    label: "Grupo 2",
+                    backgroundColor: this.spectraBlue,
+                    hoverBackgroundColor: this.spectraBlue,
+                    borderColor: this.spectraBlue
+                  }
+                ]
+              }
+            ],
+    
+            doughnutCharts: [
+              {
+                chartName: "Satisfaccion (Doughnut)",
+                values: [[30, 70, 60]],
+                colors: [
+                  {
+                    backgroundColor: [
+                      this.spectraBlue,
+                      this.spectraGreen,
+                      this.spectraRed
+                    ],
+                    borderColor: [
+                      this.spectraBlue,
+                      this.spectraGreen,
+                      this.spectraRed
+                    ]
+                  }
+                ],
+                labels: ["completo", "incompleto"]
+              }
+            ],
+    
+            radarCharts: [
+              {
+                chartName: "Accidentes (Radar)",
+                radarChartData: [
+                  {
+                    data: [90, 100, 80, 150, 110],
+                    label: "Habitos",
+                    backgroundColor: "rgba(0, 230, 118,0.5)",
+                    pointBorderColor: "rgba(0, 230, 118,1.0)",
+                    pointBackgroundColor: "rgba(0, 230, 118,1.0)",
+                    borderColor: "rgba(0, 230, 118,1.0)"
+                  }
+                ],
+                radarChartLabels: [
+                  "Choques",
+                  "Infracciones",
+                  "Atropeyos",
+                  "Giros erroneos",
+                  "Exceso de velocidad"
+                ]
+              }
+            ],
+    
+            pieCharts: [
+              {
+                chartName: "Satisfaccion (Pie)",
+                pieChartValues: [40, 20, 25],
+                pieChartLabels: [
+                  "Muy Satisfecho",
+                  "Satisfecho",
+                  "Neutral",
+                  "Nada Satisfecho"
+                ]
+              }
+            ],
+    
+            lineCharts: [
+              {
+                chartName: "metrica de seguridad (Line)",
+                lineChartData: [
+                  { data: [65, 59, 80, 81, 56, 55, 40], label: "Series A" },
+                  { data: [350, 148, 240, 319, 486, 227, 190], label: "Series B" },
+                  {
+                    data: [630, 480, 770, 90, 1000, 270, 400],
+                    label: "Series C",
+                    yAxisID: "y-axis-1"
+                  }
+                ],
+                lineChartLabels: [
+                  "January",
+                  "February",
+                  "March",
+                  "April",
+                  "May",
+                  "June",
+                  "July"
+                ]
+              }
+            ]
+          }
+        }
+      ]
     }
     /*
     

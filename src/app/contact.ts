@@ -1,3 +1,4 @@
+import { chartsData } from './chartsData';
 export class contact{
     name: string;
     id: string;
@@ -6,4 +7,6 @@ export class contact{
     phone: string;
     company: string;
     job: string;
+    messages: string[];
+    charts: chartsData;
 }
